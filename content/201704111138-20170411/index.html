@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="脱离文档流的居中margin:auto法我们经常用margin:0 auto来实现水平居中，而一直认为margin:auto不能实现垂直居中……实际上，实现垂直居中仅需要声明元素高度和下面的CSS:1234567891011121314div&amp;#123;      width: 400px;      height: 400px;      position: relative;      bor">
+<meta name="description" content="首先我们需要清楚，浏览器是如何读取选择器，以识别样式，并将相应的样式附于对应的HTML元素，达到美化页面的效果。Chris Coyier曾在《Efficiently Rendering CSS》一文中说过“浏览器读取你的选择器，遵循的原则是从选择器的右边到左边读取。换句话说，浏览器读取选择器的顺序是由右到左进行”。比如说：123div.nav &amp;lt; ul li a[title]&amp;#123;">
 <meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS实现水平、垂直居中的8中方法">
-<meta property="og:url" content="https://sunzhen086.github.io/blog/content/201704071709-20170407/index.html">
+<meta property="og:title" content="CSS选择器优先级及其性能优化">
+<meta property="og:url" content="https://sunzhen086.github.io/blog/content/201704111138-20170411/index.html">
 <meta property="og:site_name" content="孙振的博客">
-<meta property="og:description" content="脱离文档流的居中margin:auto法我们经常用margin:0 auto来实现水平居中，而一直认为margin:auto不能实现垂直居中……实际上，实现垂直居中仅需要声明元素高度和下面的CSS:1234567891011121314div&amp;#123;      width: 400px;      height: 400px;      position: relative;      bor">
-<meta property="og:updated_time" content="2017-04-07T09:29:05.797Z">
+<meta property="og:description" content="首先我们需要清楚，浏览器是如何读取选择器，以识别样式，并将相应的样式附于对应的HTML元素，达到美化页面的效果。Chris Coyier曾在《Efficiently Rendering CSS》一文中说过“浏览器读取你的选择器，遵循的原则是从选择器的右边到左边读取。换句话说，浏览器读取选择器的顺序是由右到左进行”。比如说：123div.nav &amp;lt; ul li a[title]&amp;#123;">
+<meta property="og:updated_time" content="2017-04-11T04:42:57.015Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS实现水平、垂直居中的8中方法">
-<meta name="twitter:description" content="脱离文档流的居中margin:auto法我们经常用margin:0 auto来实现水平居中，而一直认为margin:auto不能实现垂直居中……实际上，实现垂直居中仅需要声明元素高度和下面的CSS:1234567891011121314div&amp;#123;      width: 400px;      height: 400px;      position: relative;      bor">
+<meta name="twitter:title" content="CSS选择器优先级及其性能优化">
+<meta name="twitter:description" content="首先我们需要清楚，浏览器是如何读取选择器，以识别样式，并将相应的样式附于对应的HTML元素，达到美化页面的效果。Chris Coyier曾在《Efficiently Rendering CSS》一文中说过“浏览器读取你的选择器，遵循的原则是从选择器的右边到左边读取。换句话说，浏览器读取选择器的顺序是由右到左进行”。比如说：123div.nav &amp;lt; ul li a[title]&amp;#123;">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://sunzhen086.github.io/blog/content/201704071709-20170407/"/>
+  <link rel="canonical" href="https://sunzhen086.github.io/blog/content/201704111138-20170411/"/>
 
 
 
 
 
-  <title> CSS实现水平、垂直居中的8中方法 | 孙振的博客 </title>
+  <title> CSS选择器优先级及其性能优化 | 孙振的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -250,7 +250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunzhen086.github.io/blog/blog/content/201704071709-20170407/">
+    <link itemprop="mainEntityOfPage" href="https://sunzhen086.github.io/blog/blog/content/201704111138-20170411/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sunzhen">
@@ -271,7 +271,7 @@
             
             
               
-                CSS实现水平、垂直居中的8中方法
+                CSS选择器优先级及其性能优化
               
             
           </h1>
@@ -286,8 +286,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-07T17:09:30+08:00">
-                2017-04-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-11T11:38:18+08:00">
+                2017-04-11
               </time>
             
 
@@ -322,9 +322,30 @@
       
 
       
-        <h1 id="脱离文档流的居中"><a href="#脱离文档流的居中" class="headerlink" title="脱离文档流的居中"></a>脱离文档流的居中</h1><h3 id="margin-auto法"><a href="#margin-auto法" class="headerlink" title="margin:auto法"></a>margin:auto法</h3><p>我们经常用margin:0 auto来实现水平居中，而一直认为margin:auto不能实现垂直居中……实际上，实现垂直居中仅需要声明元素高度和下面的CSS:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">      <span class="attribute">width</span>: <span class="number">400px</span>;</div><div class="line">      <span class="attribute">height</span>: <span class="number">400px</span>;</div><div class="line">      <span class="attribute">position</span>: relative;</div><div class="line">      <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#465468</span>;</div><div class="line"> &#125;</div><div class="line"><span class="selector-tag">img</span>&#123;</div><div class="line">      <span class="attribute">position</span>: absolute;</div><div class="line">      <span class="attribute">margin</span>: auto;</div><div class="line">      <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">      <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">      <span class="attribute">right</span>: <span class="number">0</span>;</div><div class="line">      <span class="attribute">bottom</span>: <span class="number">0</span>;</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
-<h3 id="负margin法"><a href="#负margin法" class="headerlink" title="负margin法"></a>负margin法</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span>&#123;</div><div class="line">      <span class="attribute">width</span>: <span class="number">500px</span>;</div><div class="line">      <span class="attribute">height</span>: <span class="number">400px</span>;</div><div class="line">      <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#379</span>;</div><div class="line">      <span class="attribute">position</span>: relative;</div><div class="line"> &#125;</div><div class="line"><span class="selector-class">.inner</span>&#123;</div><div class="line">      <span class="attribute">width</span>: <span class="number">480px</span>;</div><div class="line">      <span class="attribute">height</span>: <span class="number">380px</span>;</div><div class="line">      <span class="attribute">background-color</span>: <span class="number">#746</span>;</div><div class="line">      <span class="attribute">position</span>: absolute;</div><div class="line">      <span class="attribute">top</span>: <span class="number">50%</span>;</div><div class="line">      <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">      <span class="attribute">margin-top</span>: -<span class="number">190px</span>; <span class="comment">/*height的一半*/</span></div><div class="line">      <span class="attribute">margin-left</span>: -<span class="number">240px</span>; <span class="comment">/*width的一半*/</span></div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-<h1 id="未脱离文档流元素的居中"><a href="#未脱离文档流元素的居中" class="headerlink" title="未脱离文档流元素的居中"></a>未脱离文档流元素的居中</h1><h3 id="table-cell法"><a href="#table-cell法" class="headerlink" title="table-cell法"></a>table-cell法</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</div><div class="line">    <span class="attribute">border</span>: <span class="number">3px</span> solid <span class="number">#555</span>;</div><div class="line">    <span class="attribute">display</span>: table-cell;</div><div class="line">    <span class="attribute">vertical-align</span>: middle;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">img</span>&#123;</div><div class="line">    <span class="attribute">vertical-align</span>: middle;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p>首先我们需要清楚，浏览器是如何读取选择器，以识别样式，并将相应的样式附于对应的HTML元素，达到美化页面的效果。Chris Coyier曾在《Efficiently Rendering CSS》一文中说过“<strong>浏览器读取你的选择器，遵循的原则是从选择器的右边到左边读取。换句话说，浏览器读取选择器的顺序是由右到左进行</strong>”。<br>比如说：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span><span class="selector-class">.nav</span> &lt; <span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span><span class="selector-attr">[title]</span>&#123;</div><div class="line">  <span class="comment">/* */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面的实例来说，浏览器首先会尝试在你的HTML标签中寻找“a[title]”元素，接着在匹配“li和ul”，最后在去匹配“div.nav”。这就是前成所主的“选择器从右到左的原则”。<br>选择器的最后一部分，也就是选择器的最右边（在这个例子中就是a[title]部分）部分被称为“<strong>关键选择器</strong>”，它将决定你的选择器的效率如何？是高还是低。<br>那么如何让关键选择器更有效，性能化更高呢？其实很简单，主要把握一点“<strong>越具体的关键选择器，其性能越高</strong>”<br>选择器有一个固有的效率，执行效率的顺序如下：</p>
+<ol>
+<li>id选择器（#myid）</li>
+<li>类选择器（.myclassname）</li>
+<li>标签选择器（div,h1,p）</li>
+<li>相邻选择器（h1+p）</li>
+<li>子选择器（ul &lt; li）</li>
+<li>后代选择器（li a）</li>
+<li>通配符选择器(*)</li>
+<li>属性选择器（a[rel=”external”]）</li>
+<li>伪类选择器（a:hover,li:nth-child）</li>
+</ol>
+<p><strong>综合上面的顺序，我们清楚的知道，id和类名用于关键选择器上效率是最高的，而CSS3的仿伪类和属性选择器，虽然使用方便，但其效率却是最低的。</strong><br>这个顺序跟选择器的优先级是有区别的：</p>
+<ol>
+<li>important声明 1,0,0,0</li>
+<li>ID选择器 0,1,0,0</li>
+<li>类选择器 0,0,1,0</li>
+<li>伪类选择器 0,0,1,0</li>
+<li>属性选择器 0,0,1,0</li>
+<li>标签选择器 0,0,0,1</li>
+<li>伪元素选择器 0,0,0,1</li>
+<li>通配符选择器 0,0,0,0</li>
+</ol>
 
       
     </div>
@@ -367,8 +388,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/content/201704111036-20170411/" rel="next" title="弹性布局（Flex布局）">
-                <i class="fa fa-chevron-left"></i> 弹性布局（Flex布局）
+              <a href="/blog/content/201704111245-20170411/" rel="next" title="CSS3新特性">
+                <i class="fa fa-chevron-left"></i> CSS3新特性
               </a>
             
           </div>
@@ -377,8 +398,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/content/201704071422-20170407/" rel="prev" title="HTM5标签语义化">
-                HTM5标签语义化 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/content/201704111128-20170411/" rel="prev" title="几种清除浮动的方法及优缺点">
+                几种清除浮动的方法及优缺点 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -426,17 +447,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars3.githubusercontent.com/u/16077783?s=200"
@@ -489,22 +501,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#脱离文档流的居中"><span class="nav-text">脱离文档流的居中</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#margin-auto法"><span class="nav-text">margin:auto法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#负margin法"><span class="nav-text">负margin法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#未脱离文档流元素的居中"><span class="nav-text">未脱离文档流元素的居中</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#table-cell法"><span class="nav-text">table-cell法</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
