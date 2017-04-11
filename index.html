@@ -250,6 +250,251 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunzhen086.github.io/blog/blog/content/201704071709-20170407/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sunzhen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/16077783?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="孙振的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/content/201704071709-20170407/" itemprop="url">
+                  CSS实现水平、垂直居中的8中方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-07T17:09:30+08:00">
+                2017-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="脱离文档流的居中"><a href="#脱离文档流的居中" class="headerlink" title="脱离文档流的居中"></a>脱离文档流的居中</h1><h3 id="margin-auto法"><a href="#margin-auto法" class="headerlink" title="margin:auto法"></a>margin:auto法</h3><p>我们经常用margin:0 auto来实现水平居中，而一直认为margin:auto不能实现垂直居中……实际上，实现垂直居中仅需要声明元素高度和下面的CSS:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">      <span class="attribute">width</span>: <span class="number">400px</span>;</div><div class="line">      <span class="attribute">height</span>: <span class="number">400px</span>;</div><div class="line">      <span class="attribute">position</span>: relative;</div><div class="line">      <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#465468</span>;</div><div class="line"> &#125;</div><div class="line"><span class="selector-tag">img</span>&#123;</div><div class="line">      <span class="attribute">position</span>: absolute;</div><div class="line">      <span class="attribute">margin</span>: auto;</div><div class="line">      <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">      <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">      <span class="attribute">right</span>: <span class="number">0</span>;</div><div class="line">      <span class="attribute">bottom</span>: <span class="number">0</span>;</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<h3 id="负margin法"><a href="#负margin法" class="headerlink" title="负margin法"></a>负margin法</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span>&#123;</div><div class="line">      <span class="attribute">width</span>: <span class="number">500px</span>;</div><div class="line">      <span class="attribute">height</span>: <span class="number">400px</span>;</div><div class="line">      <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="number">#379</span>;</div><div class="line">      <span class="attribute">position</span>: relative;</div><div class="line"> &#125;</div><div class="line"><span class="selector-class">.inner</span>&#123;</div><div class="line">      <span class="attribute">width</span>: <span class="number">480px</span>;</div><div class="line">      <span class="attribute">height</span>: <span class="number">380px</span>;</div><div class="line">      <span class="attribute">background-color</span>: <span class="number">#746</span>;</div><div class="line">      <span class="attribute">position</span>: absolute;</div><div class="line">      <span class="attribute">top</span>: <span class="number">50%</span>;</div><div class="line">      <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">      <span class="attribute">margin-top</span>: -<span class="number">190px</span>; <span class="comment">/*height的一半*/</span></div><div class="line">      <span class="attribute">margin-left</span>: -<span class="number">240px</span>; <span class="comment">/*width的一半*/</span></div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<h1 id="未脱离文档流元素的居中"><a href="#未脱离文档流元素的居中" class="headerlink" title="未脱离文档流元素的居中"></a>未脱离文档流元素的居中</h1><h3 id="table-cell法"><a href="#table-cell法" class="headerlink" title="table-cell法"></a>table-cell法</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span>&#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</div><div class="line">    <span class="attribute">border</span>: <span class="number">3px</span> solid <span class="number">#555</span>;</div><div class="line">    <span class="attribute">display</span>: table-cell;</div><div class="line">    <span class="attribute">vertical-align</span>: middle;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">img</span>&#123;</div><div class="line">    <span class="attribute">vertical-align</span>: middle;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunzhen086.github.io/blog/blog/content/201704071422-20170407/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sunzhen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/16077783?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="孙振的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/content/201704071422-20170407/" itemprop="url">
+                  HTM5标签语义化
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-07T14:22:55+08:00">
+                2017-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="html语义化标签"><a href="#html语义化标签" class="headerlink" title="html语义化标签"></a>html语义化标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;a&gt;标签:实现超链接</div><div class="line">&lt;p&gt;标签:文章段落放到&lt;p&gt;标签中</div><div class="line">&lt;hx&gt;标签:文章标题,栏目标题用&lt;hx&gt;表示</div><div class="line">  标题标签一共有6个， h1、h2、h3、h4、h5、h6 分别为一级标题、二级标题、三级标题、四级标题、五级标题、六级标题。并且依据重要性递减。 &lt;h1&gt; 是最高的等级。</div><div class="line">&lt;strong&gt;和&lt;em&gt;标签:特别强调某几个文字</div><div class="line">  但两者在强调的语气上有区别:&lt;em&gt; 表示强调，&lt;strong&gt; 表示更强烈的强调。并且在浏览器中&lt;em&gt; 默认用 斜体 表示，&lt;strong&gt; 用 粗体 表示。</div><div class="line">&lt;q&gt;标签:短文本引用</div><div class="line">&lt;blockquote&gt;标签:长文本引用</div><div class="line">  注意浏览器对 &lt; blockquote&gt;标签的解析是 缩进样式</div><div class="line">&lt;address&gt;标签:为网页加入地址信息</div><div class="line">&lt;ul&gt;标签:无序列表</div><div class="line">&lt;ol&gt;标签:有序列表</div><div class="line">&lt;caption&gt;标签:为表格添加标题和摘要</div><div class="line">  摘要的内容是不会在浏览器中显示出来的。它的作用是增加表格的可读性(语义化)，使搜索引擎更好的读懂表格内容，还可以使屏幕阅读器更好的帮助特殊用户读取表格内容。</div></pre></td></tr></table></figure>
+<h3 id="html5语义化标签"><a href="#html5语义化标签" class="headerlink" title="html5语义化标签"></a>html5语义化标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">1. article标签:装载显示一个独立的文章内容。</div><div class="line">  例如一篇完整的论坛帖子，一则网站新闻，一篇博客文章等等，一个用户评论等等 artilce可以嵌套，则内层的artilce对外层的article标签有隶属的关系。</div><div class="line">2. section 标签:定义文档中的节（section、区段）。比如章节、页眉、页脚或文档中的其他部分。</div><div class="line">3. aside 标签: 用来装载非正文类的内容。例如广告，成组的链接，侧边栏等等。</div><div class="line">4. hgroup 标签:用于对网页或区段的标题元素（h1-h6）进行组合。</div><div class="line">  例如，在一个区段中你有连续的h系列的标签元素，则可以用hgroup将他们括起来。</div><div class="line">  &lt;hgroup&gt;</div><div class="line">    &lt;h1&gt;标题1&lt;/h1&gt;</div><div class="line">    &lt;h2&gt;标题2&lt;/h2&gt;</div><div class="line">  &lt;/hgroup&gt;</div><div class="line">5. header 标签:定义文档的页面组合，通常是一些引导和导航信息。</div><div class="line">6. footer 标签:定义 section 或 document 的页脚。</div><div class="line">7. nav 标签:导航链接放在nav标签里。</div><div class="line">  nav标签里应该放入一些当前页面的主要导航链接。</div><div class="line">  例如在页脚显示一个站点的导航链接（如首页，服务信息页面，版权信息页面等等），就可以使用nav标签，当然，这不是必须的。</div><div class="line">8. time 标签:定义公历的时间（24 小时制）或日期，时间和时区偏移是可选的。</div><div class="line">  该元素能够以机器可读的方式对日期和时间进行编码,搜索引擎也能够生成更智能的搜索结果</div><div class="line">9. mark 标签:定义带有记号的文本。请在需要突出显示文本时使用 &lt;mark&gt; 标签。</div><div class="line">10. figure标签:规定独立的流内容（图像、图表、照片、代码等等）。</div><div class="line">11. figcaption 标签:定义 figure 元素的标题（caption）。</div><div class="line">  &quot;figcaption&quot; 元素应该被置于 &quot;figure&quot; 元素的第一个或最后一个子元素的位置。</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://sunzhen086.github.io/blog/blog/content/201704061516-20170406/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -575,7 +820,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -588,7 +833,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/blog/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
