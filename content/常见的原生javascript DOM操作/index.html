@@ -1,0 +1,855 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="javascript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="创建元素 创建元素：document.createElement()  使用document.createElement()可以创建新元素。这个方法只接受一个参数，即要创建元素的标签名。这个标签名在HTML文档中不区分大小写，在XHTML中区分大小写。1var div = document.createElement(&quot;div&quot;); 使用createElement()方法创建新元素的同时，也为新元">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常见的原生javascript DOM操作">
+<meta property="og:url" content="https://sunzhen086.github.io/blog/content/常见的原生javascript DOM操作/index.html">
+<meta property="og:site_name" content="孙振的博客">
+<meta property="og:description" content="创建元素 创建元素：document.createElement()  使用document.createElement()可以创建新元素。这个方法只接受一个参数，即要创建元素的标签名。这个标签名在HTML文档中不区分大小写，在XHTML中区分大小写。1var div = document.createElement(&quot;div&quot;); 使用createElement()方法创建新元素的同时，也为新元">
+<meta property="og:updated_time" content="2017-04-12T06:50:04.514Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="常见的原生javascript DOM操作">
+<meta name="twitter:description" content="创建元素 创建元素：document.createElement()  使用document.createElement()可以创建新元素。这个方法只接受一个参数，即要创建元素的标签名。这个标签名在HTML文档中不区分大小写，在XHTML中区分大小写。1var div = document.createElement(&quot;div&quot;); 使用createElement()方法创建新元素的同时，也为新元">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://sunzhen086.github.io/blog/content/常见的原生javascript DOM操作/"/>
+
+
+
+
+
+  <title> 常见的原生javascript DOM操作 | 孙振的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">孙振的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Record my life , my study , my think</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间线
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunzhen086.github.io/blog/blog/content/常见的原生javascript DOM操作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sunzhen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/16077783?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="孙振的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                常见的原生javascript DOM操作
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-11T16:03:28+08:00">
+                2017-04-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="创建元素"><a href="#创建元素" class="headerlink" title="创建元素"></a>创建元素</h1><blockquote>
+<p>创建元素：document.createElement()</p>
+</blockquote>
+<p>使用document.createElement()可以创建新元素。这个方法只接受一个参数，即要创建元素的标签名。这个标签名在HTML文档中不区分大小写，在XHTML中区分大小写。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</div></pre></td></tr></table></figure></p>
+<p>使用createElement()方法创建新元素的同时，也为新元素设置了ownerDocument属性，可以操作元素的特性。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">div.id = <span class="string">"myDiv"</span>;</div><div class="line">div.className = <span class="string">"div1"</span>;</div></pre></td></tr></table></figure></p>
+<p>此时，新元素尚未被添加到文档树中，因此设置各种特性均不会影响浏览器的显示。要添加到文档树，可用appendChild()、insertBefore()、replaceChild()。（稍后讲到）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.body.appendChild(div);</div></pre></td></tr></table></figure></p>
+<p>当把元素添加到文档树中后，这个元素做的任何修改都会实时地反应到浏览器中。</p>
+<p>在IE中可以为createElement()方法传入完整的元素标签和属性。(只在IE中兼容)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.createElement(<span class="string">"&lt;div id=\"mydiv\" class=\"div1\"&gt;&lt;/div&gt;"</span>);</div><div class="line"><span class="comment">//不能再标签里加其他元素节点或者文本节点，如下的方式和上面的得出的节点一样</span></div><div class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.createElement(<span class="string">"&lt;div id=\"mydiv\" class=\"div1\"&gt;12212&lt;/div&gt;"</span>);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>创建文本节点 ：document.createTextNode</p>
+</blockquote>
+<p>使用document.createTextNode()来创建文本节点，这个方法接受一个参数：要插入节点的文本。与设置已有文本节点的值一样，作为参数的文本将按照HTML或XML的格式进行编码。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.createTextNode(<span class="string">"121212"</span>);</div></pre></td></tr></table></figure></p>
+<p>可以添加多个文本节点。假如两个文本节点时相邻的同胞节点，那么两个文本节点会连起来，中间不会有空格。</p>
+<h1 id="节点关系"><a href="#节点关系" class="headerlink" title="节点关系"></a>节点关系</h1><p>文本关系如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div2"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div3"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div4"</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>父节点：parentNode</p>
+</blockquote>
+<p>parentNode是指定节点的父节点.一个元素节点的父节点可能是一个元素(Element )节点,也可能是一个文档(Document )节点,或者是个文档碎片(DocumentFragment)节点.<br>每一个节点都有一个parentNode属性。</p>
+<p>对于下面的节点类型: Attr, Document, DocumentFragment, Entity, Notation,其parentNode属性返回null。如果当前节点刚刚被建立,还没有被插入到DOM树中,则该节点的parentNode属性也返回null。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> child2 = <span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>);</div><div class="line">    <span class="keyword">var</span> parent = child2.parentNode;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>子节点：childNodes</p>
+</blockquote>
+<p>childNodes 返回包含指定节点的子节点的集合，该集合为即时更新的集合（live collection）。<br>即时更新就是对节点元素的任意修改都会立即反映到结果里。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> child2 = <span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>);</div><div class="line">    <span class="keyword">var</span> parent = child2.parentNode;</div><div class="line">    <span class="keyword">var</span> allChilds = parent.childNodes;</div><div class="line">    <span class="comment">/**</span></div><div class="line">      在IE6下才会返回3</div><div class="line">      在其他浏览器中会返回3个div节点+3个div节点的文本节点+1个自己的文本节点=7</div><div class="line">      下同</div><div class="line">    **/</div><div class="line">    <span class="built_in">console</span>.log(allChilds.length) <span class="comment">// IE下是3，其他浏览器是7</span></div><div class="line"></div><div class="line"></div><div class="line">    <span class="keyword">var</span> nodeAdd = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</div><div class="line">    <span class="keyword">var</span> textAdd = <span class="built_in">document</span>.createTextNode(<span class="string">"这是添加的文本节点"</span>);</div><div class="line">    nodeAdd.appendChild(textAdd);</div><div class="line">    parent.appendChild(nodeAdd);</div><div class="line">    <span class="built_in">console</span>.log(allChilds.length);<span class="comment">// IE下是4，其他浏览器是8</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>兄弟节点：nextSibling，previousSibling</p>
+</blockquote>
+<p>nextSibling返回某节点的下一个兄弟节点，previousSibling返回某节点的上一个兄弟节点，没有的话返回null。<br>注意：可能因为元素换行的原因返回的是text节点。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">    <span class="keyword">var</span> child3 = <span class="built_in">document</span>.getElementById(<span class="string">"div3"</span>);</div><div class="line">    <span class="keyword">var</span> next = child3.nextSibling;</div><div class="line">    <span class="keyword">var</span> previous = child3.previousSibling;</div><div class="line">    <span class="built_in">console</span>.log(next); <span class="comment">// IE下返回div4，其他返回text</span></div><div class="line">    <span class="built_in">console</span>.log(previous)  <span class="comment">// IE下返回div2，其他返回text</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>第一个或最后一个子节点：firstChild、lastChild</p>
+</blockquote>
+<p>firstChild返回node的子节点中的第一个节点的引用，没有返回null<br>lastChild返回node的子节点中的最后一个节点的引用，没有返回null<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> child3 = <span class="built_in">document</span>.getElementById(<span class="string">"div3"</span>);</div><div class="line">    <span class="keyword">var</span> parent = child3.parentNode;</div><div class="line">    <span class="keyword">var</span> first = parent.firstChild; <span class="comment">// IE是div2，其他是text</span></div><div class="line">    <span class="keyword">var</span> last = parent.lastChild; <span class="comment">// IE是div4，其他是text</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h1 id="节点元素关系"><a href="#节点元素关系" class="headerlink" title="节点元素关系"></a>节点元素关系</h1><p>只算元素，不算文本节点。</p>
+<p>以下三个方法用法和节点关系完全一样，只是这三个方法只看元素节点，不管因为空格、换行造成的文本节点或者手动加上去的文本节点。<br>children： 返回所有元素子节点（IE5+、ff3.5、opera3、chrome，但在IE8及以下会将注释节点看成一个元素节点）</p>
+<p>以下两个IE9+才支持<br>nextElementSibling：返回元素的下一个兄弟元素节点<br>previousElementSibling: 返回元素的上一个兄弟元素节点</p>
+<h1 id="节点元素关系-1"><a href="#节点元素关系-1" class="headerlink" title="节点元素关系"></a>节点元素关系</h1><blockquote>
+<p>appendChild()</p>
+</blockquote>
+<p>appendChild()用于向childNodes列表的末尾添加一个节点，并且返回这个新增的节点。<br>如果传入到appendChild()里的节点已经是文档的一部分了，那结果就是将节点从原来的位置转移到新位置，任何一个节点不能同时出现在文档中的多个位置。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> returnNode = someNode.appendChild(someNode.firstChild); <span class="comment">// 返回第一个节点</span></div><div class="line"><span class="built_in">console</span>.log(returnNode === someNode.firstChild); <span class="comment">// false</span></div><div class="line"><span class="built_in">console</span>.log(returnNode === someNode.lastChild); <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>insetBefore()</p>
+</blockquote>
+<p>insetBefore()可以将节点插入到某个特定的位置。这个方法接受两个参数：要插入的节点和作为参照的节点。<br>插入节点后，被插入的节点变成参照节点的前一个同胞节点，同时被方法返回。 如果参照节点是null，则与appendChild()执行相同的操作。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 插入后成为最后一个子节点</span></div><div class="line"><span class="keyword">var</span> returnNode = someNode.insetBefore(newNode, <span class="literal">null</span>);</div><div class="line"><span class="built_in">console</span>.log(returnNode === someNode.lastChild); <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="comment">// 插入后成为第一个子节点</span></div><div class="line"><span class="keyword">var</span> returnNode = someNode.insetBefore(newNode, someNode.firstChild);</div><div class="line"><span class="built_in">console</span>.log(returnNode === newNode); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(returnNode === someNode.firstChild); <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="comment">// 插入到最后一个子节点的前面</span></div><div class="line"><span class="keyword">var</span> returnNode = someNode.insetBefore(newNode, someNode.lastChild);</div><div class="line"><span class="built_in">console</span>.log(returnNode === someNode.childNodes[someNode.childnodes.length - <span class="number">2</span>]) <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>替换节点： replaceChild()</p>
+</blockquote>
+<p>replaceChild()接受两个参数：要插入的节点和要被替换的节点。被替换的节点将由这个方法返回并从文档中被移除，同时由要插入的节点占据其位置。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 替换第一个子节点</span></div><div class="line"><span class="keyword">var</span> returnNode = someNode.replaceChild(newNode, someNode.firstChild);</div></pre></td></tr></table></figure></p>
+<p>使用replaceChild()后，被替换的节点的所有关系指针都会被复制到插入的节点上面。</p>
+<blockquote>
+<p>删除节点：removeChild()</p>
+</blockquote>
+<p>该方法移除节点，接受一个参数，即要移除的节点，同时该方法返回被移除的节点。只能是一个节点，不能是一组节点。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 移除第一个子节点</span></div><div class="line"><span class="keyword">var</span> returnNode = someNode.removeChild(newNode, someNode.firstChild);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>克隆节点：cloneNode(true/false)</p>
+</blockquote>
+<p>返回调用该方法的节点的一个副本。参数表示是否采用深度克隆,如果为true,则该节点的所有后代节点也都会被克隆,如果为false,则只克隆该节点本身，文本或者换行、空格这些不会复制，因为他们都是一个textNode。</p>
+<p>注意: 在DOM4规范中(实现于Gecko 13.0(Firefox 13.0 / Thunderbird 13.0 / SeaMonkey 2.10) , 查看 bug 698391),deep是一个可选参数. 如果省略的话, deep参数的默认值为true,也就是说,深度克隆是默认的.如果想使用浅克隆, 你需要将该参数指定为false。</p>
+<p>在旧版本的浏览器中, 你始终需要指定deep参数。</p>
+<p>克隆一个元素节点会拷贝它所有的属性以及属性值,当然也就包括了属性上绑定的事件(比如onclick=”alert(1)”),但不会拷贝那些使用addEventListener()方法或者node.onclick = fn这种用JavaScript动态绑定的事件。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div1 = <span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>);</div><div class="line"><span class="keyword">var</span> cloneHtml = div1.cloneNode(<span class="literal">true</span>);</div><div class="line"><span class="built_in">document</span>.body.appendChild(cloneHtml);</div></pre></td></tr></table></figure>
+<h1 id="元素选择"><a href="#元素选择" class="headerlink" title="元素选择"></a>元素选择</h1><p>HTML代码示例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"div2"</span> <span class="attr">class</span>=<span class="string">"one"</span> <span class="attr">name</span>=<span class="string">"nameone"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div3"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div4"</span> <span class="attr">name</span>=<span class="string">"div2"</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>querySelector、querySelectorAll(IE8及以上)</p>
+</blockquote>
+<p>Selectors API通过匹配一组选择器的方式来为从DOM中检索Element节点提供一些简单快捷的方法，这比过去必须要在javascript代码中用循环来查找某个你想要的特定元素更快一些。<br>该规范对于使用Document,DocumentFragment和Element接口的对象都增了两种新方法：</p>
+<p>querySelector<br>返回节点子树内与之相匹配的第一个Element节点。如果没有匹配的节点，则返回null。</p>
+<p>querySelectorAll<br>返回一个包含节点子树内所有与之相匹配的Element节点列表，如果没有相匹配的，则返回一个空节点列表。</p>
+<p>注意：由 querySelector()、querySelectorAll()返回的节点列表不是动态实时的（非live Collection）。这和其他DOM查询方法返回动态实时节点列表不一样。</p>
+<p>选择器方法接受一个或多个用逗号分隔的选择器来确定需要被返回的元素。例如，要选择文档中所有CSS的类(class)是warning或者note的段落(p)元素,可以这样写：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> special = <span class="built_in">document</span>.querySelectorAll( <span class="string">"p.warning, p.note"</span> );</div></pre></td></tr></table></figure></p>
+<p>也可以通过ID来查询，例如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> el = <span class="built_in">document</span>.querySelector( <span class="string">"#main, #basic, #exclamation"</span> );</div></pre></td></tr></table></figure></p>
+<p>执行上面的代码后，el就包含了文档中元素的ID是main，basic或exclamation的所有元素中的第一个元素。</p>
+<p>querySelector() and querySelectorAll() 里可以使用任何CSS选择器，他们都不是live Collection：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> notLive = <span class="built_in">document</span>.querySelectorAll(<span class="string">"p"</span>);</div><div class="line"><span class="built_in">console</span>.log(notLive);</div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>).removeChild(<span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>));</div><div class="line"><span class="built_in">console</span>.log(notLive);</div><div class="line"><span class="comment">// 上面两个输出都是输出 `p#div2.one`的引用，没有因为删除了`p`标签而使`notLive`的结果发生变化。</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>getElementById()</p>
+</blockquote>
+<p>返回一个匹配特定 ID的元素。id是大小写敏感的字符串，代表了所要查找的元素的唯一ID，如果没有则返回null。<br>如果新建一个元素，还没有插入到文档中，则不能通过该方法获取到。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> notLive = <span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>);</div><div class="line"><span class="built_in">console</span>.log(notLive.innerHTML);</div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>).removeChild(<span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>));</div><div class="line"><span class="built_in">console</span>.log(notLive.innerHTML);</div><div class="line"><span class="comment">// 上面输出都是2，说明getElementById()也是**非**live collection</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>getElementsByTagName()</p>
+</blockquote>
+<p>document.getElementsByTagName() 方法返回一个实时的包含具有给出标签名的元素们的HTMLCollection。指定的元素的子树会被搜索，包括元素自己。返回的 list 是实时的（live collection），意味着它会随着DOM树的变化自动更新。因此，如果对同一个元素，使用相同的参数，是不需要多次调用document.getElementsByTagName() 的。</p>
+<p>Element.getElementsByTagName()的搜索被限制为指定元素的后代而不是document</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> live = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line"><span class="built_in">console</span>.log(live[<span class="number">0</span>].innerHTML);</div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>).removeChild(<span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>));</div><div class="line"><span class="built_in">console</span>.log(live[<span class="number">0</span>].innerHTML);</div><div class="line"><span class="comment">// 第一个输出2，第二个报错，因为无法引用到p标签</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>getElementsByName()</p>
+</blockquote>
+<p>该方法返回一个实时的nodelist collection，包含文档中所有name属性匹配的标签。这是一个<strong>live collection</strong>。<br>注意：在IE和opera下，如果某个元素1的name和另一个元素2的id重合，且元素2在元素1的前面，则getElementsByName()会取到元素2。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> live = <span class="built_in">document</span>.getElementsByName(<span class="string">"div2"</span>);</div><div class="line"><span class="built_in">console</span>.log(live[<span class="number">0</span>].innerHTML);</div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>).removeChild(<span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>));</div><div class="line"><span class="built_in">console</span>.log(live[<span class="number">0</span>].innerHTML);</div><div class="line"><span class="comment">// chrome下：全部输出4</span></div><div class="line"><span class="comment">// IE下： 第一个输出2，第二个报错。</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>getElementsByClassName()</p>
+</blockquote>
+<p>该方法返回一个即时更新的（live） HTMLCollection，包含了所有拥有指定 class 的子元素。当在 document 对象上调用此方法时，会检索整个文档，包括根元素。(IE9以下不支持)</p>
+<p>要匹配多个class，则className用空格分开。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">getElementsByClassName(<span class="string">"class1 class2"</span>);</div></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> live = <span class="built_in">document</span>.getElementsByClassName(<span class="string">"one"</span>);</div><div class="line"><span class="built_in">console</span>.log(live[<span class="number">0</span>].innerHTML);</div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>).removeChild(<span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>));</div><div class="line"><span class="built_in">console</span>.log(live[<span class="number">0</span>].innerHTML);</div><div class="line"><span class="comment">// 第一个返回2，第二个报错</span></div></pre></td></tr></table></figure>
+<h1 id="属性操作"><a href="#属性操作" class="headerlink" title="属性操作"></a>属性操作</h1><blockquote>
+<p>setAttribute()</p>
+</blockquote>
+<p>添加一个新属性（attribute）到元素上，或改变元素上已经存在的属性的值。</p>
+<p>当在 HTML 文档中的 HTML 元素上调用 setAttribute() 方法时，该方法会将其属性名称（attribute name）参数小写化。</p>
+<p>如果指定的属性已经存在，则其值变为传递的值。如果不存在，则创建指定的属性。也可指定为null。如果设置为null，最好使用removeAttribute()。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div2 = <span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>);</div><div class="line">div2.setAttribute(<span class="string">"class"</span>, <span class="string">"new_class"</span>);</div><div class="line">div2.setAttribute(<span class="string">"id"</span>, <span class="string">"new_id"</span>);</div></pre></td></tr></table></figure>
+<p>注意：在IE7下，修改了元素的class，如果已有class，则会出现两个class，通过setAttribute()添加的不生效；如果没有class，则添加上class，但这个添加上去的class的样式不会生效。</p>
+<blockquote>
+<p>removeAttribute()</p>
+</blockquote>
+<p>该方法用于移除元素的属性。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div2 = <span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>);</div><div class="line">div2.removeAttribute(<span class="string">"class"</span>);</div></pre></td></tr></table></figure></p>
+<p>注意：IE7下无法移除 class 属性</p>
+<blockquote>
+<p>getAttribute()</p>
+</blockquote>
+<p>该方法返回元素上指定属性（attribute）的值。如果指定的属性不存在，则返回 null 或 “” （空字符串）（IE5+都返回null）。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div2 = <span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>);</div><div class="line"><span class="keyword">var</span> attr = div2.getAttribute(<span class="string">"class"</span>);</div><div class="line"><span class="built_in">console</span>.log(attr);</div></pre></td></tr></table></figure></p>
+<p>注意：IE7下不能正确返回class，返回的是null，其他正常。</p>
+<blockquote>
+<p>hasAttribute()</p>
+</blockquote>
+<p>hasAttribute() 返回一个布尔值，指示该元素是否包含有指定的属性（attribute）。</p>
+<p>注意：IE7不支持该方法。</p>
+<blockquote>
+<p>自定义属性data-*</p>
+</blockquote>
+<p>html5里有一个data-*去设置获取元素的自定义属性值。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div id=<span class="string">"div1"</span> data-aa=<span class="string">"11"</span>&gt;</div></pre></td></tr></table></figure></p>
+<p>利用div1.dataset可以获得一个DOMStringMap，包含了元素的所有data-*。<br>使用div1.dataset.aa就可以获取11的值。<br>同样，通过设置div1.dataset.bb = “22”就可以设置一个自定义属性值。<br>在不兼容的浏览器里，就使用getAttribute和setAttribute</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div1 = <span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>);</div><div class="line"><span class="keyword">var</span> a = <span class="literal">null</span>;</div><div class="line"><span class="keyword">if</span> (div1.dataset) &#123;</div><div class="line">    a = div1.dataset.aa;</div><div class="line">    div1.dataset.bb = <span class="string">"222"</span>;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    a = div1.getAttribute(<span class="string">"data-aa"</span>);</div><div class="line">    div1.setAttribute(<span class="string">"data-bb"</span>, <span class="string">"2222"</span>);</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(a);</div></pre></td></tr></table></figure>
+<h1 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h1><blockquote>
+<p>addEventListener()</p>
+</blockquote>
+<p>addEventListener()将指定的事件监听器注册到目标对象上，当目标对象触发指定的事件时，指定的回调函数就会触发。目标对象可以是 文档上的元素、 document、 window 或者XMLHttpRequest(比如onreadystatechange事件)。</p>
+<p>IE8及以下不支持此方法且只有事件冒泡没有事件捕获。IE9开始支持此方法，也就有了事件捕获。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div1 = <span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>);</div><div class="line">div1.addEventListener(<span class="string">"click"</span>, listener, <span class="literal">false</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">listener</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'test'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> cloneHtml = div1.cloneNode(<span class="literal">true</span>);</div><div class="line"><span class="built_in">document</span>.body.appendChild(cloneHtml);</div></pre></td></tr></table></figure>
+<p>第一个参数是事件名，第二个是回调函数，第三个参数为true表示捕获，false表示冒泡。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div1 = <span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>);</div><div class="line">div1.addEventListener(<span class="string">"click"</span>, listener1, <span class="literal">true</span>/fasle);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">listener1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">   <span class="built_in">console</span>.log(<span class="string">'test1'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> div2 = <span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>);</div><div class="line">div2.addEventListener(<span class="string">"click"</span>, listener2, <span class="literal">true</span>/fasle);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">listener2</span>(<span class="params"></span>) </span>&#123;</div><div class="line">   <span class="built_in">console</span>.log(<span class="string">'test2'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>有一点要注意的是，当对某一个元素1既绑定了捕获事件，又绑定了冒泡事件时：<br>当这个元素1并不是触发事件的那个元素2时，则触发顺序会按照先 捕获 后 冒泡 的顺序触发；<br>当这个元素1就是最底层的触发事件的元素时，则这个元素没有捕获和冒泡的区别，谁先绑定就先触发谁。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div2 = <span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>);</div><div class="line"></div><div class="line">div2.addEventListener(<span class="string">"click"</span>, listener2, <span class="literal">true</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">listener2</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'test2'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">div2.addEventListener(<span class="string">"click"</span>, listener1, <span class="literal">false</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">listener1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'test1'</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 按绑定顺序执行，两个`addEventLister()`颠倒过来则执行顺序也变化</span></div><div class="line"><span class="comment">// 如果再对`div1`绑定一个捕获、一个冒泡，则会先触发捕获 再 触发冒泡，与绑定顺序无关</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>removeEventListener()</p>
+</blockquote>
+<p>与addEventListener()绑定事件对应的就是移除已绑定的事件。第三个参数的布尔值代表解绑的是捕获事件还是冒泡事件。两个事件互不相关。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div2 = <span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>);</div><div class="line">div2.addEventListener(<span class="string">"click"</span>, listener2, <span class="literal">true</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">listener2</span>(<span class="params"></span>) </span>&#123;</div><div class="line">   <span class="built_in">console</span>.log(<span class="string">'test2'</span>);</div><div class="line">&#125;</div><div class="line">div2.removeEventListener(<span class="string">"click"</span>, listener2, <span class="literal">true</span>);</div></pre></td></tr></table></figure>
+<p>注意：只能通过removeEventListener()解绑有名字的函数，对于绑定的匿名函数无法解除绑定。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">div2.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'test'</span>);</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">&#125;, <span class="literal">true</span>);</div><div class="line"></div><div class="line">div2.removeEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"test"</span>);</div><div class="line">&#125;, <span class="literal">true</span>);</div><div class="line">div2.onclick = <span class="literal">null</span>;</div><div class="line"><span class="comment">// 点击div2依然打印出test</span></div></pre></td></tr></table></figure>
+<p>注意：这里this指向触发事件的元素自身。</p>
+<blockquote>
+<p>attachEvent()、detachEvent()</p>
+</blockquote>
+<p>IE8及以下使用这两个方法绑定和解绑事件，当然，IE9+也支持这个事件。但这个方法绑定的事件默认为冒泡也只有冒泡。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 这里需要在事件前加 on</span></div><div class="line">div2.attachEvent(<span class="string">"onclick"</span>, listener1);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">listener1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'test'</span>);</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line">div2.detachEvent(<span class="string">"onclick"</span>, listener1);</div></pre></td></tr></table></figure></p>
+<p>和addEventListener()一样，也不能解绑匿名函数。<br>注意：这里this指向 window。</p>
+<blockquote>
+<p>阻止默认事件和冒泡</p>
+</blockquote>
+<p>标准事件和IE事件中的阻止默认事件和冒泡事件也有很大区别。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div2 = <span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>);</div><div class="line"><span class="keyword">if</span> (div2.addEventListener) &#123;</div><div class="line">    div2.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        e.preventDefault(); <span class="comment">// 阻止默认事件</span></div><div class="line">        e.stopPropagation(); <span class="comment">// 阻止冒泡</span></div><div class="line">        <span class="built_in">console</span>.log(e.target.innerHTML);</div><div class="line">    &#125;, <span class="literal">false</span>);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    div2.attachEvent(<span class="string">"onclick"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> e = <span class="built_in">window</span>.event;</div><div class="line">        e.returnValue = <span class="literal">false</span>; <span class="comment">// 阻止默认事件</span></div><div class="line">        e.cancelBubble = <span class="literal">true</span>; <span class="comment">// 阻止冒泡</span></div><div class="line">        <span class="built_in">console</span>.log(e.srcElement.innerHTML);</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>IE8及以下的event是绑定在window上的。（我的IE11里，仿真到IE7、IE8也可以取到标准事件里的 e 对象，估计是升级到IE11的原因）。</p>
+<blockquote>
+<p>自定义事件：createEvent()</p>
+</blockquote>
+<p>createEvent()用于创建一个新的 event ，而后这个 event 必须调用它的 init() 方法进行初始化。最后就可以在目标元素上使用dispatchEvent()调用新创建的event事件了。</p>
+<p>createEvent()的参数一般有：UIEvents、MouseEvents、MutationEvents、HTMLEvents、Event(s)等等，分别有对应的init()方法。HTMLEvents、Event(s)对应的都是initEvent()方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">initEvent(type, bubbles, cancelable)</div></pre></td></tr></table></figure>
+<p>type表示自定义的事件类型，bubbles表示是否冒泡，cancelable表示是否阻止默认事件。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">target.dispatchEvent(ev)</div></pre></td></tr></table></figure>
+<p>target就是要触发自定义事件的DOM元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var div1 = document.getElementById(&quot;div1&quot;);</div><div class="line">div1.addEventListener(&quot;message&quot;, function()&#123;</div><div class="line">  console.log(&apos;test&apos;);</div><div class="line">&#125;, false);</div><div class="line"></div><div class="line">var div2 = document.getElementById(&quot;div2&quot;);</div><div class="line">div2.addEventListener(&quot;message&quot;, function(e)&#123;</div><div class="line">  console.log(this);</div><div class="line">  console.log(e);</div><div class="line">&#125;, false);</div><div class="line">var ev = document.createEvent(&quot;Event&quot;);</div><div class="line">ev.initEvent(&quot;message&quot;, false, true); // 起泡参数变为true，div1的事件就会触发</div><div class="line">div2.dispatchEvent(ev);</div></pre></td></tr></table></figure></p>
+<h1 id="获取元素相关计算后的值"><a href="#获取元素相关计算后的值" class="headerlink" title="获取元素相关计算后的值"></a>获取元素相关计算后的值</h1><blockquote>
+<p>getComputedStyle()、currentStyle()</p>
+</blockquote>
+<p>当我们想获取元素计算后实际呈现在页面上的各个值，就用这两个方法。IE8及以下用currentStyle(),IE9+及其他标准浏览器用getComputedStyle()。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div2 = <span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>);</div><div class="line"><span class="keyword">var</span> result = <span class="string">""</span>;</div><div class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.getComputedStyle) &#123;</div><div class="line">    result = (<span class="built_in">window</span> || <span class="built_in">document</span>.defaultView).getComputedStyle(div2, <span class="literal">null</span>)[<span class="string">'cssFloat'</span>];</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    result = div2.currentStyle[<span class="string">"styleFloat"</span>];</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(result);</div><div class="line"><span class="comment">// document.defaultView返回document对象所关联的window</span></div></pre></td></tr></table></figure></p>
+<p>这两个方法在不同的浏览器里差距也很大。<br>比如float属性：<br>getComputedStyle： IE9以上需要用cssFloat，其他标准的用float<br>currentStyle： IE8及以下可用styleFloat或者float。</p>
+<p>比如height属性：<br>假如未设置height值，标准浏览器里能计算出高度值，而currentStyle计算出来是auto。</p>
+<p>上面的例子getComputedStyle是用键值去访问的，也可用getPropertyValue()去访问。（IE8、IE7不支持）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">result = (<span class="built_in">window</span> || <span class="built_in">document</span>.defaultView).getComputedStyle(div2, <span class="literal">null</span>).getPropertyValue(<span class="string">"float"</span>);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>getBoundingClientRect()、getClientRects()</p>
+</blockquote>
+<p>getBoundingClientRect()该方法获得页面中某个元素的上、右、下、左分别相对浏览器视窗的位置。getBoundingClientRect是DOM元素到浏览器可视范围的距离（到浏览器顶部而不是文档顶部）。该函数返回一个Object对象，该对象有6个属性：top,lef,right,bottom,width,height；这里的top、left和css中的理解很相似，width、height是元素自身的宽高，但是right，bottom和css中的理解有点不一样。right是指元素右边界距窗口最左边的距离，bottom是指元素下边界距窗口最上面的距离。</p>
+<p>getClientRects()是返回一个ClientRectList集合。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div1 = <span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>);</div><div class="line"><span class="keyword">var</span> rects1 = div1.getClientRects();</div><div class="line"><span class="keyword">var</span> rects2 = div1.getBoundingClientRect();</div><div class="line"><span class="built_in">console</span>.log(rects1[<span class="number">0</span>].top);</div><div class="line"><span class="built_in">console</span>.log(rects2.top);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/javascript/" rel="tag"># javascript</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/content/关于变量类型的判断/" rel="next" title="关于变量类型的判断">
+                <i class="fa fa-chevron-left"></i> 关于变量类型的判断
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/content/viewport和media query/" rel="prev" title="viewport和media query">
+                viewport和media query <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars3.githubusercontent.com/u/16077783?s=200"
+               alt="sunzhen" />
+          <p class="site-author-name" itemprop="name">sunzhen</p>
+           
+              <p class="site-description motion-element" itemprop="description"><i class="fa fa-github" style="font-size:20px"></i><br /> <a href="https://github.com/sunzhen086">github主页</a></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/blog/archives">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#创建元素"><span class="nav-text">创建元素</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#节点关系"><span class="nav-text">节点关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#节点元素关系"><span class="nav-text">节点元素关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#节点元素关系-1"><span class="nav-text">节点元素关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#元素选择"><span class="nav-text">元素选择</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#属性操作"><span class="nav-text">属性操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事件"><span class="nav-text">事件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取元素相关计算后的值"><span class="nav-text">获取元素相关计算后的值</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">sunzhen</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

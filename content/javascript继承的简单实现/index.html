@@ -1,0 +1,696 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="javascript,面向对象,前端," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="JavaScript作为一门语法比较松散的语言，在ES6之前并没有像C++/Java等传统OO语言一样有class关键字，也不能通过private，public等关键字来限定权限。本篇就介绍一下JavaScript是如何实现继承的。 JavaScript的继承可以分为两类：  基于对象的继承 基于类型的继承  基于对象的继承基于对象的继承也叫原型继承。我们知道通过JavaScript字面量创建的对">
+<meta name="keywords" content="javascript,面向对象,前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript继承的简单实现">
+<meta property="og:url" content="https://sunzhen086.github.io/blog/content/javascript继承的简单实现/index.html">
+<meta property="og:site_name" content="孙振的博客">
+<meta property="og:description" content="JavaScript作为一门语法比较松散的语言，在ES6之前并没有像C++/Java等传统OO语言一样有class关键字，也不能通过private，public等关键字来限定权限。本篇就介绍一下JavaScript是如何实现继承的。 JavaScript的继承可以分为两类：  基于对象的继承 基于类型的继承  基于对象的继承基于对象的继承也叫原型继承。我们知道通过JavaScript字面量创建的对">
+<meta property="og:updated_time" content="2017-04-13T06:24:18.193Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript继承的简单实现">
+<meta name="twitter:description" content="JavaScript作为一门语法比较松散的语言，在ES6之前并没有像C++/Java等传统OO语言一样有class关键字，也不能通过private，public等关键字来限定权限。本篇就介绍一下JavaScript是如何实现继承的。 JavaScript的继承可以分为两类：  基于对象的继承 基于类型的继承  基于对象的继承基于对象的继承也叫原型继承。我们知道通过JavaScript字面量创建的对">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://sunzhen086.github.io/blog/content/javascript继承的简单实现/"/>
+
+
+
+
+
+  <title> javascript继承的简单实现 | 孙振的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">孙振的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Record my life , my study , my think</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间线
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunzhen086.github.io/blog/blog/content/javascript继承的简单实现/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sunzhen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/16077783?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="孙振的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                javascript继承的简单实现
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-06T11:03:00+08:00">
+                2017-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>JavaScript作为一门语法比较松散的语言，在ES6之前并没有像C++/Java等传统OO语言一样有class关键字，也不能通过private，public等关键字来限定权限。本篇就介绍一下JavaScript是如何实现继承的。</p>
+<p>JavaScript的继承可以分为两类：</p>
+<ul>
+<li>基于对象的继承</li>
+<li>基于类型的继承</li>
+</ul>
+<h2 id="基于对象的继承"><a href="#基于对象的继承" class="headerlink" title="基于对象的继承"></a>基于对象的继承</h2><p>基于对象的继承也叫原型继承。我们知道通过JavaScript字面量创建的对象都会连接到 Object.prototype ，因此我们用Object.prototype来实现继承。本质上是摒弃类，不调用构造函数，而是用<code>Object.create()</code>，直接让新对象继承旧对象的属性。例如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">    <span class="attr">name</span>: <span class="string">"Jack"</span>,</div><div class="line">    <span class="attr">getName</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>.name; &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> p1 = <span class="built_in">Object</span>.create(person);</div><div class="line"><span class="built_in">console</span>.log(p1.getName());    <span class="comment">//Jack</span></div></pre></td></tr></table></figure></p>
+<p>代码很简单，person有一个属性和一个方法。对象p1通过Object.create()来继承，第一个参数prototype指向person的prototype，这样对象p1就继承了person的属性和方法。</p>
+<p>Object.create()还可以指定第二个参数，即数据属性，将其添加到新对象中。数据属性可设4个描述符value， writable，enumerable，configurable 。后3个看名字也能猜出意思，不指定的话默认为false。因为和本篇关系不大，就不跑题了，只看看设置value的情况：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> p2 = <span class="built_in">Object</span>.create(person, &#123;</div><div class="line">    <span class="attr">name</span>: &#123;</div><div class="line">        <span class="attr">value</span>: <span class="string">"Zhang"</span></div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(p2.getName());    <span class="comment">//Zhang</span></div></pre></td></tr></table></figure></p>
+<p>用Object.create()相当于创建了一个全新的对象，你可以给该对象任意新增，重载它的属性和方法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">    <span class="attr">name</span>: <span class="string">"Jack"</span>,</div><div class="line">    <span class="attr">getName</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>.name; &#125;,</div><div class="line">    <span class="attr">getAge</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>.age; &#125; <span class="comment">//注意并没有age这个成员变量，依赖子类实现</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> p3 = <span class="built_in">Object</span>.create(person);</div><div class="line">p3.name = <span class="string">'Rose'</span>;</div><div class="line">p3.age = <span class="number">17</span>;</div><div class="line">p3.location = <span class="string">'上海'</span>;</div><div class="line">p3.getLocation = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>.location; &#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(p3.getName());    <span class="comment">//Rose</span></div><div class="line"><span class="built_in">console</span>.log(p3.getAge());     <span class="comment">//17</span></div><div class="line"><span class="built_in">console</span>.log(p3.getLocation());    <span class="comment">//上海</span></div></pre></td></tr></table></figure></p>
+<p>在person中并没有age这个属性，因此你调用person.getAge();将得到undefined。但在对象p3里新定义了age这个属性，于是就能正确地调用基类的getAge方法。另外子类重载了name的值，且新定义了location属性和getLocation方法。结果如上所示，不赘述。</p>
+<h2 id="基于类型的继承"><a href="#基于类型的继承" class="headerlink" title="基于类型的继承"></a>基于类型的继承</h2><p>基于类型的继承是通过构造函数依赖于原型的继承，而非依赖于对象。例如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>.name; &#125;;  </div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">name, age</span>) </span>&#123;</div><div class="line">    Person.call(<span class="keyword">this</span>, name);</div><div class="line">    <span class="keyword">this</span>.age = age;</div><div class="line">    <span class="keyword">this</span>.getAge = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>.age; &#125;;</div><div class="line">&#125;</div><div class="line">Student.prototype = <span class="keyword">new</span> Person();    <span class="comment">//需要通过new来访问基类的构造函数</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person(<span class="string">'Cathy'</span>);</div><div class="line"><span class="keyword">var</span> s = <span class="keyword">new</span> Student(<span class="string">'Bill'</span>, <span class="number">23</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(p.getName());    <span class="comment">//Cathy</span></div><div class="line"><span class="built_in">console</span>.log(s.getName());    <span class="comment">//Bill</span></div><div class="line"><span class="built_in">console</span>.log(s.getAge());     <span class="comment">//23</span></div></pre></td></tr></table></figure></p>
+<p>Student继承自Person。name虽然是在基类Person里被定义的，但用new调用Person的构造函数后，this将被绑定到子类Student对象上，因此name最终是定义在子类Student对象上的。结果如上所示，不赘述。</p>
+<h2 id="保护隐私"><a href="#保护隐私" class="headerlink" title="保护隐私"></a>保护隐私</h2><p>之所以定义getName，getAge等方法就是不想让用户直接访问name，age等属性。可惜上面两种继承均无法保护隐私，均可像p.name，p.age这样直接访问属性。如果认为这些属性的隐私非常重要，希望模拟出OO语言中private属性的效果，可以用函数模块化。</p>
+<p>所谓函数模块化，本质上就是在函数内新建一个对象，新对象的方法里使用参数对象的属性，然后将新对象返回。此时新对象里是没有参数对象的属性的，达到了保护隐私的目的。代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = <span class="function"><span class="keyword">function</span>(<span class="params">spec</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> that = &#123;&#125;;        <span class="comment">//新对象</span></div><div class="line">    that.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> spec.name; &#125;;  <span class="comment">//使用参数的属性</span></div><div class="line">    that.getAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> spec.age; &#125;;  <span class="comment">//使用参数的属性</span></div><div class="line">    <span class="keyword">return</span> that;        <span class="comment">//返回新对象</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> p4 = person(&#123;<span class="attr">name</span>: <span class="string">'Jane'</span>, <span class="attr">age</span>: <span class="number">20</span>&#125;);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(p4.name);    <span class="comment">//undefined</span></div><div class="line"><span class="built_in">console</span>.log(p4.age);     <span class="comment">//undefined</span></div><div class="line"><span class="built_in">console</span>.log(p4.getName());    <span class="comment">//Jane</span></div><div class="line"><span class="built_in">console</span>.log(p4.getAge());     <span class="comment">//20</span></div></pre></td></tr></table></figure>
+<p>进一步实现多层继承也非常方便，效果如下，不赘述：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> student = <span class="function"><span class="keyword">function</span>(<span class="params">spec</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> that = person(spec);        <span class="comment">//新对象继承自person</span></div><div class="line">    that.getRole = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="string">'student'</span>; &#125;;  <span class="comment">//新对象增加方法</span></div><div class="line">    that.getInfo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> spec.name + <span class="string">' '</span> + spec.age + <span class="string">' '</span> + that.getRole();</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">return</span> that;    <span class="comment">//返回新对象</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> p5 = student(&#123;<span class="attr">name</span>:<span class="string">'Andy'</span>, <span class="attr">age</span>:<span class="number">12</span>&#125;);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(p5.name);       <span class="comment">//undefined</span></div><div class="line"><span class="built_in">console</span>.log(p5.getName());  <span class="comment">//Andy</span></div><div class="line"><span class="built_in">console</span>.log(p5.getRole());  <span class="comment">//student</span></div><div class="line"><span class="built_in">console</span>.log(p5.getInfo());  <span class="comment">//Andy 12 student</span></div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/javascript/" rel="tag"># javascript</a>
+          
+            <a href="/blog/tags/面向对象/" rel="tag"># 面向对象</a>
+          
+            <a href="/blog/tags/前端/" rel="tag"># 前端</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/content/javascript继承详解/" rel="next" title="javascript继承详解">
+                <i class="fa fa-chevron-left"></i> javascript继承详解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars3.githubusercontent.com/u/16077783?s=200"
+               alt="sunzhen" />
+          <p class="site-author-name" itemprop="name">sunzhen</p>
+           
+              <p class="site-description motion-element" itemprop="description"><i class="fa fa-github" style="font-size:20px"></i><br /> <a href="https://github.com/sunzhen086">github主页</a></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/blog/archives">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/blog/tags/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于对象的继承"><span class="nav-text">基于对象的继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于类型的继承"><span class="nav-text">基于类型的继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保护隐私"><span class="nav-text">保护隐私</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">sunzhen</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
