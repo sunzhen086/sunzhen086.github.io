@@ -94,7 +94,7 @@
 <meta property="og:url" content="https://sunzhen086.github.io/blog/content/常见的跨域的解决方法以及其优缺点/index.html">
 <meta property="og:site_name" content="孙振的博客">
 <meta property="og:description" content="1. JSONP只要说到跨域，就必须聊到 JSONP，JSONP全称为：JSON with Padding，可用于解决主流浏览器的跨域数据访问的问题。 Web 页面上调用 js 文件不受浏览器同源策略的影响，所以通过 Script 便签可以进行跨域的请求： 首先前端先设置好回调函数，并将其作为 url 的参数。服务端接收到请求后，通过该参数获得回调函数名，并将数据放在参数中将其返回收到结果后因为是">
-<meta property="og:updated_time" content="2017-04-12T09:34:43.102Z">
+<meta property="og:updated_time" content="2017-04-13T08:43:59.266Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常见的跨域的解决方法以及其优缺点">
 <meta name="twitter:description" content="1. JSONP只要说到跨域，就必须聊到 JSONP，JSONP全称为：JSON with Padding，可用于解决主流浏览器的跨域数据访问的问题。 Web 页面上调用 js 文件不受浏览器同源策略的影响，所以通过 Script 便签可以进行跨域的请求： 首先前端先设置好回调函数，并将其作为 url 的参数。服务端接收到请求后，通过该参数获得回调函数名，并将数据放在参数中将其返回收到结果后因为是">
@@ -348,7 +348,7 @@
 <h1 id="3-Server-Proxy"><a href="#3-Server-Proxy" class="headerlink" title="3. Server Proxy"></a>3. Server Proxy</h1><p>服务器代理，顾名思义，当你需要有跨域的请求操作时发送请求给后端，让后端帮你代为请求，然后最后将获取的结果发送给你。</p>
 <h1 id="4-postMessage"><a href="#4-postMessage" class="headerlink" title="4. postMessage"></a>4. postMessage</h1><p>postMessage 是 HTML5 新增加的一项功能，跨文档消息传输(Cross Document Messaging)，目前：Chrome 2.0+、Internet Explorer 8.0+, Firefox 3.0+, Opera 9.6+, 和 Safari 4.0+ 都支持这项功能，使用起来也特别简单。</p>
 <p>创建一个 iframe，使用 iframe 的一个方法 postMessage 可以想 <a href="http://localhost:8081/b.html" target="_blank" rel="external">http://localhost:8081/b.html</a> 发送消息，然后监听 message，可以获得其他文档发来的消息。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="comment">//子页面</span></div><div class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span>(e.source != <span class="built_in">window</span>.parent) &#123;</div><div class="line">	    <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">let</span> data = e.data;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'b.html 接收到的消息:'</span>, data);</div><div class="line">        parent.postMessage(<span class="string">'我已经接收到消息了!'</span>, e.origin);</div><div class="line">    &#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="comment">//子页面</span></div><div class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span>(e.source != <span class="built_in">window</span>.parent) &#123;</div><div class="line">	    <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">let</span> data = e.data;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'b.html 接收到的消息:'</span>, data);</div><div class="line">        parent.postMessage(<span class="string">'我已经接收到消息了!'</span>, e.origin);</div><div class="line">    &#125;);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -475,7 +475,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

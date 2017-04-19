@@ -250,6 +250,135 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunzhen086.github.io/blog/blog/content/排序算法解析--冒泡排序、快速排序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sunzhen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/16077783?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="孙振的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/content/排序算法解析--冒泡排序、快速排序/" itemprop="url">
+                  排序算法解析--冒泡排序、快速排序
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-14T09:32:07+08:00">
+                2017-04-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>时间复杂度是度量算法执行的时间长短，而空间复杂度是度量算法所需存储空间的大小。</p>
+<p>算法的时间复杂度记做：T(n)=O(f(n))</p>
+<p>在计算时间复杂度的时候，先找出算法的基本操作，然后根据相应的各语句确定它的执行次数，再找出T(n)的同数量级（它的同数量级有以下：1、Log2n、n、nLog2n、n的平方、n的三次方、2的n次方、n!），找出后，f(n)=该数量级，如冒泡排序的时间复杂度为T(n)=O(n*n)。</p>
+<h3 id="冒泡（Bubble）排序"><a href="#冒泡（Bubble）排序" class="headerlink" title="冒泡（Bubble）排序"></a>冒泡（Bubble）排序</h3><p>冒泡排序（BubbleSort）的基本思想是：依次比较相邻的两个数，将小数放在前面，大数放在后面。如此重复下去，直至最终完成排序。</p>
+<p>时间复杂度为O(n*n)，适用于排序小列表。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">3</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">21</span>,<span class="number">6</span>,<span class="number">15</span>,<span class="number">63</span>];</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sortA</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length<span class="number">-1</span>;i++)&#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j=i+<span class="number">1</span>;j&lt;arr.length;j++)&#123;</div><div class="line">            <span class="comment">//获取第一个值和后一个值比较</span></div><div class="line">            <span class="keyword">var</span> cur = arr[i];</div><div class="line">            <span class="keyword">if</span>(cur&gt;arr[j])&#123;</div><div class="line">                <span class="comment">// 因为需要交换值，所以会把后一个值替换，我们要先保存下来</span></div><div class="line">                <span class="keyword">var</span> index = arr[j];</div><div class="line">                <span class="comment">// 交换值</span></div><div class="line">                arr[j] = cur;</div><div class="line">                arr[i] = index;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p>快速排序（Quicksort）是对冒泡排序的一种改进，它的基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。</p>
+<p>时间复杂度为O(nlog2n)，适用于排序大列表。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">3</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">21</span>,<span class="number">6</span>,<span class="number">15</span>,<span class="number">63</span>];</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sortA</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">    <span class="comment">// 如果只有一位，就没有必要比较</span></div><div class="line">    <span class="keyword">if</span>(arr.length&lt;=<span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">return</span> arr;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 获取中间值的索引</span></div><div class="line">    <span class="keyword">var</span> len = <span class="built_in">Math</span>.floor(arr.length/<span class="number">2</span>);</div><div class="line">    <span class="comment">// 截取中间值</span></div><div class="line">    <span class="keyword">var</span> cur = arr.splice(len,<span class="number">1</span>);</div><div class="line">    <span class="comment">// 小于中间值放这里面</span></div><div class="line">    <span class="keyword">var</span> left = [];</div><div class="line">    <span class="comment">// 大于的放着里面</span></div><div class="line">    <span class="keyword">var</span> right = [];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">        <span class="comment">// 判断是否大于</span></div><div class="line">        <span class="keyword">if</span>(cur&gt;arr[i])&#123;</div><div class="line">            left.push(arr[i]);</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            right.push(arr[i]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 通过递归，上一轮比较好的数组合并，并且再次进行比较。</span></div><div class="line">    <span class="keyword">return</span> sortA(left).concat(cur,sortA(right));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://sunzhen086.github.io/blog/blog/content/对象的深度克隆/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -327,12 +456,24 @@
       
         
           
-            <h3 id="js中的对象"><a href="#js中的对象" class="headerlink" title="js中的对象"></a>js中的对象</h3><p>谈到对象的克隆，必定要说一下对象的概念。</p>
+            <h1 id="js中的对象"><a href="#js中的对象" class="headerlink" title="js中的对象"></a>js中的对象</h1><p>谈到对象的克隆，必定要说一下对象的概念。</p>
 <p>js中的数据类型分为两大类：原始类型和对象类型。</p>
 <ul>
-<li>原始类型包括：数值、字符串、布尔值、null、undefined（后两个是特殊的原始值，这里不做详细的说明，我的上一篇博客有谈到过一些）</li>
+<li>原始类型包括：数值、字符串、布尔值、null、undefined</li>
 <li>对象类型包括：对象即是属性的集合，当然这里又两个特殊的对象—-函数（js中的一等对象）、数组（键值的有序集合）。</li>
 </ul>
+<p>好了既然对象分为这两类，这两种类型在复制克隆的时候是有很大区别的。原始类型存储的是对象的实际数据，而对象类型存储的是对象的引用地址（对象的实际内容单独存放，为了减少数据开销通常存放在内存中）。ps：说到这里，大家要知道，对象的原型也是引用对象，它把原型的方法和属性放在内存当中，通过原型链的方式来指向这个内存地址。</p>
+<h1 id="克隆的概念"><a href="#克隆的概念" class="headerlink" title="克隆的概念"></a>克隆的概念</h1><p>浅度克隆：原始类型为值传递，对象类型仍为引用传递。</p>
+<p>深度克隆：所有元素或属性均完全复制，与原对象完全脱离，也就是说所有对于新对象的修改都不会反映到原对象中。</p>
+<h1 id="浅克隆的表现"><a href="#浅克隆的表现" class="headerlink" title="浅克隆的表现"></a>浅克隆的表现</h1><h3 id="原始类型"><a href="#原始类型" class="headerlink" title="原始类型"></a>原始类型</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//数值克隆的表现</span></div><div class="line"><span class="keyword">var</span> a=<span class="string">"1"</span>;</div><div class="line"><span class="keyword">var</span> b=a;</div><div class="line">b=<span class="string">"2"</span>;</div><div class="line"><span class="built_in">console</span>.log(a);<span class="comment">// "1"</span></div><div class="line"><span class="built_in">console</span>.log(b);<span class="comment">// "2"</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//字符串克隆的表现</span></div><div class="line"><span class="keyword">var</span> c=<span class="string">"1"</span>;</div><div class="line"><span class="keyword">var</span> d=c;</div><div class="line">d=<span class="string">"2"</span>;</div><div class="line"><span class="built_in">console</span>.log(c);<span class="comment">// "1"</span></div><div class="line"><span class="built_in">console</span>.log(d);<span class="comment">// "2"</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//布尔值克隆的表现</span></div><div class="line"><span class="keyword">var</span> x=<span class="literal">true</span>;</div><div class="line"><span class="keyword">var</span> y=x;</div><div class="line">y=<span class="literal">false</span>;</div><div class="line"><span class="built_in">console</span>.log(x);<span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(y);<span class="comment">// false</span></div></pre></td></tr></table></figure>
+<p>从上面的代码大家可以看出，原始类型即使我们采用普通的克隆方式仍能得到正确的结果，原因就是原始类型存储的是对象的实际数据。</p>
+<h3 id="对象类型"><a href="#对象类型" class="headerlink" title="对象类型"></a>对象类型</h3><p>前面说过，函数式一等对象，当然也是对象类型，但是函数的克隆通过浅克隆即可实现<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> m=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="number">1</span>);&#125;;</div><div class="line"><span class="keyword">var</span> n=m;</div><div class="line">n=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="number">2</span>);&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(m());<span class="comment">//1</span></div><div class="line"><span class="built_in">console</span>.log(n());<span class="comment">//2</span></div></pre></td></tr></table></figure></p>
+<p>大家能看到，我们直接通过普通赋值的方式，就实现了函数的克隆，并且不会影响之前的对象。原因就是函数的克隆会在内存单独开辟一块空间，互不影响。</p>
+<p>好了，说了这个特殊的”关系户“以后，我们来说说普通的”选手“。为了方便后续的代码表现，我这里定义一个复杂的对象类型oPerson。下面看一下对象类型的浅复制有什么危害：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> oPerson=&#123;</div><div class="line">    <span class="attr">oName</span>:<span class="string">"rookiebob"</span>,</div><div class="line">    <span class="attr">oAge</span>:<span class="string">"18"</span>,</div><div class="line">    <span class="attr">oAddress</span>:&#123;</div><div class="line">        <span class="attr">province</span>:<span class="string">"beijing"</span></div><div class="line">    &#125;,    </div><div class="line">    <span class="attr">ofavorite</span>:[</div><div class="line">        <span class="string">"swimming"</span>,</div><div class="line">        &#123;<span class="attr">reading</span>:<span class="string">"history book"</span>&#125;</div><div class="line">    ],</div><div class="line">    <span class="attr">skill</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">"bob is coding"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> result=&#123;&#125;;</div><div class="line">    <span class="keyword">for</span>(key <span class="keyword">in</span> obj)&#123;</div><div class="line">        result[key]=obj[key];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> oNew=clone(oPerson);</div><div class="line"><span class="built_in">console</span>.log(oPerson.oAddress.province);<span class="comment">//beijing</span></div><div class="line">oNew.oAddress.province=<span class="string">"shanghai"</span>;</div><div class="line"><span class="built_in">console</span>.log(oPerson.oAddress.province);<span class="comment">//shanghai</span></div></pre></td></tr></table></figure></p>
+<p>通过上面的代码，大家能看到，经过对象克隆以后，我修改oNew的地址，发现原对象oPerson也被修改了。这说明对象的克隆不够彻底，那也就是说深度克隆失败！</p>
+<h1 id="深克隆的实现"><a href="#深克隆的实现" class="headerlink" title="深克隆的实现"></a>深克隆的实现</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">obj,newObj</span>)</span>&#123;</div><div class="line">   <span class="keyword">var</span> newObj = newObj || &#123;&#125;;</div><div class="line">   <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> obj)&#123;</div><div class="line">     <span class="keyword">if</span>(type <span class="keyword">of</span> obj == <span class="string">"object"</span>)&#123;</div><div class="line">       newObj[key] = (obj[key].constructor === <span class="built_in">Array</span>) ? [] : &#123;&#125;;</div><div class="line">       deepClone(obj[key] , newObj[key]);</div><div class="line">     &#125;<span class="keyword">else</span>&#123;</div><div class="line">       newObj[key] = obj[key];</div><div class="line">     &#125;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">return</span> newObj;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -606,7 +747,7 @@
 <h1 id="3-Server-Proxy"><a href="#3-Server-Proxy" class="headerlink" title="3. Server Proxy"></a>3. Server Proxy</h1><p>服务器代理，顾名思义，当你需要有跨域的请求操作时发送请求给后端，让后端帮你代为请求，然后最后将获取的结果发送给你。</p>
 <h1 id="4-postMessage"><a href="#4-postMessage" class="headerlink" title="4. postMessage"></a>4. postMessage</h1><p>postMessage 是 HTML5 新增加的一项功能，跨文档消息传输(Cross Document Messaging)，目前：Chrome 2.0+、Internet Explorer 8.0+, Firefox 3.0+, Opera 9.6+, 和 Safari 4.0+ 都支持这项功能，使用起来也特别简单。</p>
 <p>创建一个 iframe，使用 iframe 的一个方法 postMessage 可以想 <a href="http://localhost:8081/b.html" target="_blank" rel="external">http://localhost:8081/b.html</a> 发送消息，然后监听 message，可以获得其他文档发来的消息。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="comment">//子页面</span></div><div class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span>(e.source != <span class="built_in">window</span>.parent) &#123;</div><div class="line">	    <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">let</span> data = e.data;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'b.html 接收到的消息:'</span>, data);</div><div class="line">        parent.postMessage(<span class="string">'我已经接收到消息了!'</span>, e.origin);</div><div class="line">    &#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="comment">//子页面</span></div><div class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span>(e.source != <span class="built_in">window</span>.parent) &#123;</div><div class="line">	    <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">let</span> data = e.data;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'b.html 接收到的消息:'</span>, data);</div><div class="line">        parent.postMessage(<span class="string">'我已经接收到消息了!'</span>, e.origin);</div><div class="line">    &#125;);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
 
           
         
@@ -1591,176 +1732,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunzhen086.github.io/blog/blog/content/CSS3的性能与兼容性/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="sunzhen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/16077783?s=200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="孙振的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog/content/CSS3的性能与兼容性/" itemprop="url">
-                  CSS3的性能与兼容性
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-11T15:04:38+08:00">
-                2017-04-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h1><h3 id="translate3d进行gpu加速"><a href="#translate3d进行gpu加速" class="headerlink" title="translate3d进行gpu加速"></a>translate3d进行gpu加速</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**不推荐**/</span></div><div class="line"><span class="selector-tag">left</span>: 500<span class="selector-tag">px</span></div><div class="line"><span class="comment">/**推荐**/</span></div><div class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">translateX</span>(500<span class="selector-tag">px</span>);</div></pre></td></tr></table></figure>
-<p>一个元素通过translate3d右移500px的动画流畅度会明显优于使用left属性；<br>原因是因为：</p>
-<ul>
-<li><p>CSS动画属性会触发整个页面的重排relayout、重绘repaint、重组recomposite</p>
-</li>
-<li><p>Paint通常是其中最花费性能的，尽可能避免使用触发paint的CSS动画属性，这也是为什么我们推荐在CSS动画中使用webkit-transform: translateX(3em)的方案代替使用left: 3em，因为left会额外触发layout与paint，而webkit-transform只触发整个页面composite（这也是为什么推荐在CSS动画中使用webkit-transform: translateX(500px)的方案代替使用left: 500px）；</p>
-</li>
-</ul>
-<h3 id="box-shadow和gradients-渐变"><a href="#box-shadow和gradients-渐变" class="headerlink" title="box-shadow和gradients(渐变)"></a>box-shadow和gradients(渐变)</h3><p>这两个东西在css3里往往都是页面的性能杀手，计算他们尤其消耗cpu, 尤其是在一个元素同时都使用了它们，所以拥抱扁平化设计吧;</p>
-<h1 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h1><h3 id="border-radius"><a href="#border-radius" class="headerlink" title="border-radius"></a>border-radius</h3><p>IE9+,Firefox4+,Chrome5+,Safari5+,Opera01.5+,iOS Safari4+,Android Browser2.2+ ,Android Chrome18+</p>
-<p>低版本的chrome:-webkit-border-radius:10px;</p>
-<p>低版本的firefox:-moz-border-radius:10px;</p>
-<p>IE6/7/8:引入ie-css3兼容文件,不支持除了黑色(#000)以外的其他颜色</p>
-<h3 id="box-shadow"><a href="#box-shadow" class="headerlink" title="box-shadow"></a>box-shadow</h3><p>IE9.0+,Firefox4.0+,Chrome10.0+,Safari5.1+,Opera10.5+,iOS Safari5.0+,Android Browser4.0+,Android Chrome18.0+</p>
-<p>低版本的chrome:-webkit-box-shadow:10px 10px 5px #888;</p>
-<p>低版本的firefox:-moz-box-shadow:10px 10px 5px #888;</p>
-<p>IE6/7/8:</p>
-<ul>
-<li>使用filter</li>
-<li>推荐：引入ie-css3兼容文件behavior:url(ie-css3.htc)</li>
-</ul>
-<h3 id="border-image"><a href="#border-image" class="headerlink" title="border-image"></a>border-image</h3><p>IE9+,Firefox4+, Chrome15+,Safari7+, Opera15+, iOS Safari7+, Android Browser4.4+, Android Chrome18+</p>
-<p>低版本的chrome:-webkit-background-size:10px 10px 5px #888; //不支持background简写</p>
-<p>低版本的firefox:-moz-background-size:10px 10px 5px #888;</p>
-<p>IE8 引入backgroundsize.min.htc兼容文件</p>
-<h3 id="text-shadow"><a href="#text-shadow" class="headerlink" title="text-shadow"></a>text-shadow</h3><p>IE10+, Firefox3.5+, Chrome4.0+, Safari6.0+</p>
-<p>低版本的chrome:-webkit-text-shadow:1px 1px 1px #000;</p>
-<p>低版本的firefox:-moz-text-shadow:1px 1px 1px #000;</p>
-<p>IE6/7/8:引入ie-css3兼容文件behavior:url(ie-css3.htc);</p>
-<h3 id="transform"><a href="#transform" class="headerlink" title="transform"></a>transform</h3><p>IE9+, Firefox3.5+, Chrome4.0+, Safari6.0+, iOS Safari8.4+, Android Browser4.4+, Android Chrome34+</p>
-<p>兼容方法：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.transform</span>&#123;</div><div class="line">    <span class="attribute">-webkit-transform</span>: x,y;</div><div class="line">    <span class="attribute">-moz-transform</span>: x,y;</div><div class="line">    <span class="attribute">-ms-transform</span>: x,y;</div><div class="line">    <span class="attribute">-o-transform</span>: x,y;</div><div class="line">    <span class="attribute">transform</span>: x,y;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>IE8及以下：用IE滤镜<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    filter:fliph;//水平翻转相当于transform:rotateY(180deg)</div><div class="line">    filter:flipv;//垂直翻转相当于transform:rotateX(180deg)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="transition"><a href="#transition" class="headerlink" title="transition"></a>transition</h3><p>IE10+, Firefox16+, Chrome26+ ,Safari6.1+ , iOS Safari7+, Android Browser4.4+, Android Chrome25+</p>
-<p>兼容方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">p &#123;</div><div class="line">  -webkit-transition: all .5s ease-in-out 1s;</div><div class="line">  -moz-transition: all .5s ease-in-out 1s;</div><div class="line">  -o-transition: all .5s ease-in-out 1s;</div><div class="line">  transition: all .5s ease-in-out 1s;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>IE9以及更早的版本，不支持 transition 属性。</p>
-<h3 id="animation"><a href="#animation" class="headerlink" title="animation"></a>animation</h3><p>IE10+,Firefox16+, Chrome43+, Safari9+<br>兼容方法：<br>低版本的chrome:-webkit-</p>
-<p>低版本的firefox：-moz-</p>
-<p>IE9及以下不支持</p>
-<h3 id="linear-gradient-radial-gradient"><a href="#linear-gradient-radial-gradient" class="headerlink" title="linear-gradient radial-gradient"></a>linear-gradient radial-gradient</h3><p>IE10+, Firefox16+, Chrome26+, Safari6.1+<br>兼容方法：</p>
-<p>低版本的chrome:-webkit-</p>
-<p>低版本的firefox：-moz-</p>
-<p>IE9及以下可使用 IE 滤镜处理:<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000',endColorstr='#ffffff');</div></pre></td></tr></table></figure></p>
-<h3 id="rgba-r-g-b-a"><a href="#rgba-r-g-b-a" class="headerlink" title="rgba(r,g,b,a)"></a>rgba(r,g,b,a)</h3><p>IE9+, Firefox2+, Chrome4+, Safari3+, iOS Safari3.2+, Android Browser2.1+, Android Chrome18+</p>
-<p>兼容方法：</p>
-<p>IE6/7/8不支持使用 rgba 模式实现透明度，可使用 IE 滤镜处理<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7fff0000,endColorstr=#7fff0000);</div></pre></td></tr></table></figure></p>
-<h3 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h3><p>IE11+,Firefox22+, Chrome21+, Safari6.1+</p>
-<p>低版本的chrome:-webkit- 或者 -webkit-box-flex</p>
-<p>低版本的firefox：-moz-box-flex:1;</p>
-<p>IE10:-ms-flex:1;</p>
-<p>box-flex效果类似于过渡版本和新版本的flex属性；</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1810,7 +1781,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

@@ -99,7 +99,7 @@
 <meta property="og:image" content="https://sunzhen086.github.io/blog/image/1959053-b22c72cb6270f20f.png">
 <meta property="og:image" content="https://sunzhen086.github.io/blog/image/1959053-0913c9d6c7c5ede8.png">
 <meta property="og:image" content="https://sunzhen086.github.io/blog/image/1959053-e35e899cb27a45b5.png">
-<meta property="og:updated_time" content="2017-04-11T02:44:47.406Z">
+<meta property="og:updated_time" content="2017-04-13T06:35:53.114Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript继承详解">
 <meta name="twitter:description" content="上一篇javascript继承的简单实现一文中已经介绍了继承，但那篇只能算简介。本篇结合原型链详细介绍一下JavaScript的继承。 通常除非小应用，那像JavaScript继承一文中那样直接写写代码就行了。如果是大型应用或者库函数，对于继承这种稍显复杂的代码结构，通常会封装成一个inherit函数。例如：123456789function Parent(n) &amp;#123;     //父构造函">
@@ -328,7 +328,7 @@
       
 
       
-        <p>上一篇<a href="https://sunzhen086.github.io/blog/content/201704061102-20170406/">javascript继承的简单实现</a>一文中已经介绍了继承，但那篇只能算简介。本篇结合原型链详细介绍一下JavaScript的继承。</p>
+        <p>上一篇<a href="/blog/content/javascript继承的简单实现/">javascript继承的简单实现</a>一文中已经介绍了继承，但那篇只能算简介。本篇结合原型链详细介绍一下JavaScript的继承。</p>
 <p>通常除非小应用，那像JavaScript继承一文中那样直接写写代码就行了。如果是大型应用或者库函数，对于继承这种稍显复杂的代码结构，通常会封装成一个inherit函数。例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params">n</span>) </span>&#123;     <span class="comment">//父构造函数</span></div><div class="line">    <span class="keyword">this</span>.name = n || <span class="string">'Adam'</span>;</div><div class="line">&#125;</div><div class="line">Parent.prototype.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params">n</span>) </span>&#123;&#125;    <span class="comment">//空白的子构造函数</span></div><div class="line"></div><div class="line">inherit(Child, Parent); <span class="comment">//继承</span></div></pre></td></tr></table></figure></p>
 <p>现在我们来实现inherit。</p>
 <p><strong>模式一 ：</strong> 默认模式，将原型对象指向父对象<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">inherit</span>(<span class="params">Child, Parent</span>) </span>&#123;</div><div class="line">    Child.prototype = <span class="keyword">new</span> Parent();    <span class="comment">//原型对象指向父对象</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -481,7 +481,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

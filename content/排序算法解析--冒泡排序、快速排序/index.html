@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="直接绑定(不利于UI和代码分离,event详见后面）1&amp;lt;input type=&quot;button&quot; onclick=&quot;doEventThing(event)&quot;&amp;gt; DOM事件句柄1document.getElementById(&quot;divid&quot;).onclick = function()&amp;#123;&amp;#125;; 侦听函数123456789var tb = document.getelemen">
+<meta name="description" content="时间复杂度是度量算法执行的时间长短，而空间复杂度是度量算法所需存储空间的大小。 算法的时间复杂度记做：T(n)=O(f(n)) 在计算时间复杂度的时候，先找出算法的基本操作，然后根据相应的各语句确定它的执行次数，再找出T(n)的同数量级（它的同数量级有以下：1、Log2n、n、nLog2n、n的平方、n的三次方、2的n次方、n!），找出后，f(n)=该数量级，如冒泡排序的时间复杂度为T(n)=O(">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="兼容绑定事件的3种方法">
-<meta property="og:url" content="https://sunzhen086.github.io/blog/content/兼容绑定事件的3种方法/index.html">
+<meta property="og:title" content="排序算法解析--冒泡排序、快速排序">
+<meta property="og:url" content="https://sunzhen086.github.io/blog/content/排序算法解析--冒泡排序、快速排序/index.html">
 <meta property="og:site_name" content="孙振的博客">
-<meta property="og:description" content="直接绑定(不利于UI和代码分离,event详见后面）1&amp;lt;input type=&quot;button&quot; onclick=&quot;doEventThing(event)&quot;&amp;gt; DOM事件句柄1document.getElementById(&quot;divid&quot;).onclick = function()&amp;#123;&amp;#125;; 侦听函数123456789var tb = document.getelemen">
-<meta property="og:updated_time" content="2017-04-12T08:28:30.633Z">
+<meta property="og:description" content="时间复杂度是度量算法执行的时间长短，而空间复杂度是度量算法所需存储空间的大小。 算法的时间复杂度记做：T(n)=O(f(n)) 在计算时间复杂度的时候，先找出算法的基本操作，然后根据相应的各语句确定它的执行次数，再找出T(n)的同数量级（它的同数量级有以下：1、Log2n、n、nLog2n、n的平方、n的三次方、2的n次方、n!），找出后，f(n)=该数量级，如冒泡排序的时间复杂度为T(n)=O(">
+<meta property="og:updated_time" content="2017-04-14T01:39:32.797Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="兼容绑定事件的3种方法">
-<meta name="twitter:description" content="直接绑定(不利于UI和代码分离,event详见后面）1&amp;lt;input type=&quot;button&quot; onclick=&quot;doEventThing(event)&quot;&amp;gt; DOM事件句柄1document.getElementById(&quot;divid&quot;).onclick = function()&amp;#123;&amp;#125;; 侦听函数123456789var tb = document.getelemen">
+<meta name="twitter:title" content="排序算法解析--冒泡排序、快速排序">
+<meta name="twitter:description" content="时间复杂度是度量算法执行的时间长短，而空间复杂度是度量算法所需存储空间的大小。 算法的时间复杂度记做：T(n)=O(f(n)) 在计算时间复杂度的时候，先找出算法的基本操作，然后根据相应的各语句确定它的执行次数，再找出T(n)的同数量级（它的同数量级有以下：1、Log2n、n、nLog2n、n的平方、n的三次方、2的n次方、n!），找出后，f(n)=该数量级，如冒泡排序的时间复杂度为T(n)=O(">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://sunzhen086.github.io/blog/content/兼容绑定事件的3种方法/"/>
+  <link rel="canonical" href="https://sunzhen086.github.io/blog/content/排序算法解析--冒泡排序、快速排序/"/>
 
 
 
 
 
-  <title> 兼容绑定事件的3种方法 | 孙振的博客 </title>
+  <title> 排序算法解析--冒泡排序、快速排序 | 孙振的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -250,7 +250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunzhen086.github.io/blog/blog/content/兼容绑定事件的3种方法/">
+    <link itemprop="mainEntityOfPage" href="https://sunzhen086.github.io/blog/blog/content/排序算法解析--冒泡排序、快速排序/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sunzhen">
@@ -271,7 +271,7 @@
             
             
               
-                兼容绑定事件的3种方法
+                排序算法解析--冒泡排序、快速排序
               
             
           </h1>
@@ -286,8 +286,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-12T16:27:00+08:00">
-                2017-04-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-14T09:32:07+08:00">
+                2017-04-14
               </time>
             
 
@@ -322,9 +322,15 @@
       
 
       
-        <h3 id="直接绑定-不利于UI和代码分离-event详见后面）"><a href="#直接绑定-不利于UI和代码分离-event详见后面）" class="headerlink" title="直接绑定(不利于UI和代码分离,event详见后面）"></a>直接绑定(不利于UI和代码分离,event详见后面）</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"doEventThing(event)"</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="DOM事件句柄"><a href="#DOM事件句柄" class="headerlink" title="DOM事件句柄"></a>DOM事件句柄</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"divid"</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div></pre></td></tr></table></figure>
-<h3 id="侦听函数"><a href="#侦听函数" class="headerlink" title="侦听函数"></a>侦听函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> tb = <span class="built_in">document</span>.getelementbyid(<span class="string">"tab1"</span>);   </div><div class="line"><span class="keyword">if</span>(<span class="built_in">window</span>.event==<span class="literal">null</span>)&#123;<span class="comment">// 只有ie下，event是window的对象属性，注意两个侦听函数的区别.该方法只能在没定义event才行  </span></div><div class="line">  td.attachEvent(<span class="string">'onclick'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="string">'21'</span>);&#125;);   </div><div class="line">  td.attachEvent(<span class="string">'onclick'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="string">'21'</span>);&#125;)  </div><div class="line">&#125;  </div><div class="line"><span class="keyword">else</span> &#123; <span class="comment">// mozilla, netscape, firefox，w3c  </span></div><div class="line">  td.addEventListener(<span class="string">'click'</span>, alert(<span class="string">'11'</span>), <span class="literal">false</span>);   </div><div class="line">  td.addEventListener(<span class="string">'click'</span>, alert(<span class="string">'12'</span>), <span class="literal">false</span>);   </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p>时间复杂度是度量算法执行的时间长短，而空间复杂度是度量算法所需存储空间的大小。</p>
+<p>算法的时间复杂度记做：T(n)=O(f(n))</p>
+<p>在计算时间复杂度的时候，先找出算法的基本操作，然后根据相应的各语句确定它的执行次数，再找出T(n)的同数量级（它的同数量级有以下：1、Log2n、n、nLog2n、n的平方、n的三次方、2的n次方、n!），找出后，f(n)=该数量级，如冒泡排序的时间复杂度为T(n)=O(n*n)。</p>
+<h3 id="冒泡（Bubble）排序"><a href="#冒泡（Bubble）排序" class="headerlink" title="冒泡（Bubble）排序"></a>冒泡（Bubble）排序</h3><p>冒泡排序（BubbleSort）的基本思想是：依次比较相邻的两个数，将小数放在前面，大数放在后面。如此重复下去，直至最终完成排序。</p>
+<p>时间复杂度为O(n*n)，适用于排序小列表。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">3</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">21</span>,<span class="number">6</span>,<span class="number">15</span>,<span class="number">63</span>];</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sortA</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length<span class="number">-1</span>;i++)&#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j=i+<span class="number">1</span>;j&lt;arr.length;j++)&#123;</div><div class="line">            <span class="comment">//获取第一个值和后一个值比较</span></div><div class="line">            <span class="keyword">var</span> cur = arr[i];</div><div class="line">            <span class="keyword">if</span>(cur&gt;arr[j])&#123;</div><div class="line">                <span class="comment">// 因为需要交换值，所以会把后一个值替换，我们要先保存下来</span></div><div class="line">                <span class="keyword">var</span> index = arr[j];</div><div class="line">                <span class="comment">// 交换值</span></div><div class="line">                arr[j] = cur;</div><div class="line">                arr[i] = index;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p>快速排序（Quicksort）是对冒泡排序的一种改进，它的基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。</p>
+<p>时间复杂度为O(nlog2n)，适用于排序大列表。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">3</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">21</span>,<span class="number">6</span>,<span class="number">15</span>,<span class="number">63</span>];</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sortA</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">    <span class="comment">// 如果只有一位，就没有必要比较</span></div><div class="line">    <span class="keyword">if</span>(arr.length&lt;=<span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">return</span> arr;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 获取中间值的索引</span></div><div class="line">    <span class="keyword">var</span> len = <span class="built_in">Math</span>.floor(arr.length/<span class="number">2</span>);</div><div class="line">    <span class="comment">// 截取中间值</span></div><div class="line">    <span class="keyword">var</span> cur = arr.splice(len,<span class="number">1</span>);</div><div class="line">    <span class="comment">// 小于中间值放这里面</span></div><div class="line">    <span class="keyword">var</span> left = [];</div><div class="line">    <span class="comment">// 大于的放着里面</span></div><div class="line">    <span class="keyword">var</span> right = [];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">        <span class="comment">// 判断是否大于</span></div><div class="line">        <span class="keyword">if</span>(cur&gt;arr[i])&#123;</div><div class="line">            left.push(arr[i]);</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            right.push(arr[i]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 通过递归，上一轮比较好的数组合并，并且再次进行比较。</span></div><div class="line">    <span class="keyword">return</span> sortA(left).concat(cur,sortA(right));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -367,18 +373,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/content/事件委托的原理与实现/" rel="next" title="事件委托的原理与实现">
-                <i class="fa fa-chevron-left"></i> 事件委托的原理与实现
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/content/关于变量类型的判断/" rel="prev" title="关于变量类型的判断">
-                关于变量类型的判断 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/content/对象的深度克隆/" rel="prev" title="对象的深度克隆">
+                对象的深度克隆 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -499,7 +501,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#直接绑定-不利于UI和代码分离-event详见后面）"><span class="nav-text">直接绑定(不利于UI和代码分离,event详见后面）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM事件句柄"><span class="nav-text">DOM事件句柄</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#侦听函数"><span class="nav-text">侦听函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#冒泡（Bubble）排序"><span class="nav-text">冒泡（Bubble）排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速排序"><span class="nav-text">快速排序</span></a></li></ol></div>
             
 
           </div>

@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="js中的对象谈到对象的克隆，必定要说一下对象的概念。 js中的数据类型分为两大类：原始类型和对象类型。  原始类型包括：数值、字符串、布尔值、null、undefined（后两个是特殊的原始值，这里不做详细的说明，我的上一篇博客有谈到过一些） 对象类型包括：对象即是属性的集合，当然这里又两个特殊的对象—-函数（js中的一等对象）、数组（键值的有序集合）。">
+<meta name="description" content="js中的对象谈到对象的克隆，必定要说一下对象的概念。 js中的数据类型分为两大类：原始类型和对象类型。  原始类型包括：数值、字符串、布尔值、null、undefined 对象类型包括：对象即是属性的集合，当然这里又两个特殊的对象—-函数（js中的一等对象）、数组（键值的有序集合）。  好了既然对象分为这两类，这两种类型在复制克隆的时候是有很大区别的。原始类型存储的是对象的实际数据，而对象类型存储">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="对象的深度克隆">
 <meta property="og:url" content="https://sunzhen086.github.io/blog/content/对象的深度克隆/index.html">
 <meta property="og:site_name" content="孙振的博客">
-<meta property="og:description" content="js中的对象谈到对象的克隆，必定要说一下对象的概念。 js中的数据类型分为两大类：原始类型和对象类型。  原始类型包括：数值、字符串、布尔值、null、undefined（后两个是特殊的原始值，这里不做详细的说明，我的上一篇博客有谈到过一些） 对象类型包括：对象即是属性的集合，当然这里又两个特殊的对象—-函数（js中的一等对象）、数组（键值的有序集合）。">
-<meta property="og:updated_time" content="2017-04-13T06:20:28.053Z">
+<meta property="og:description" content="js中的对象谈到对象的克隆，必定要说一下对象的概念。 js中的数据类型分为两大类：原始类型和对象类型。  原始类型包括：数值、字符串、布尔值、null、undefined 对象类型包括：对象即是属性的集合，当然这里又两个特殊的对象—-函数（js中的一等对象）、数组（键值的有序集合）。  好了既然对象分为这两类，这两种类型在复制克隆的时候是有很大区别的。原始类型存储的是对象的实际数据，而对象类型存储">
+<meta property="og:updated_time" content="2017-04-13T07:36:36.695Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对象的深度克隆">
-<meta name="twitter:description" content="js中的对象谈到对象的克隆，必定要说一下对象的概念。 js中的数据类型分为两大类：原始类型和对象类型。  原始类型包括：数值、字符串、布尔值、null、undefined（后两个是特殊的原始值，这里不做详细的说明，我的上一篇博客有谈到过一些） 对象类型包括：对象即是属性的集合，当然这里又两个特殊的对象—-函数（js中的一等对象）、数组（键值的有序集合）。">
+<meta name="twitter:description" content="js中的对象谈到对象的克隆，必定要说一下对象的概念。 js中的数据类型分为两大类：原始类型和对象类型。  原始类型包括：数值、字符串、布尔值、null、undefined 对象类型包括：对象即是属性的集合，当然这里又两个特殊的对象—-函数（js中的一等对象）、数组（键值的有序集合）。  好了既然对象分为这两类，这两种类型在复制克隆的时候是有很大区别的。原始类型存储的是对象的实际数据，而对象类型存储">
 
 
 
@@ -322,12 +322,24 @@
       
 
       
-        <h3 id="js中的对象"><a href="#js中的对象" class="headerlink" title="js中的对象"></a>js中的对象</h3><p>谈到对象的克隆，必定要说一下对象的概念。</p>
+        <h1 id="js中的对象"><a href="#js中的对象" class="headerlink" title="js中的对象"></a>js中的对象</h1><p>谈到对象的克隆，必定要说一下对象的概念。</p>
 <p>js中的数据类型分为两大类：原始类型和对象类型。</p>
 <ul>
-<li>原始类型包括：数值、字符串、布尔值、null、undefined（后两个是特殊的原始值，这里不做详细的说明，我的上一篇博客有谈到过一些）</li>
+<li>原始类型包括：数值、字符串、布尔值、null、undefined</li>
 <li>对象类型包括：对象即是属性的集合，当然这里又两个特殊的对象—-函数（js中的一等对象）、数组（键值的有序集合）。</li>
 </ul>
+<p>好了既然对象分为这两类，这两种类型在复制克隆的时候是有很大区别的。原始类型存储的是对象的实际数据，而对象类型存储的是对象的引用地址（对象的实际内容单独存放，为了减少数据开销通常存放在内存中）。ps：说到这里，大家要知道，对象的原型也是引用对象，它把原型的方法和属性放在内存当中，通过原型链的方式来指向这个内存地址。</p>
+<h1 id="克隆的概念"><a href="#克隆的概念" class="headerlink" title="克隆的概念"></a>克隆的概念</h1><p>浅度克隆：原始类型为值传递，对象类型仍为引用传递。</p>
+<p>深度克隆：所有元素或属性均完全复制，与原对象完全脱离，也就是说所有对于新对象的修改都不会反映到原对象中。</p>
+<h1 id="浅克隆的表现"><a href="#浅克隆的表现" class="headerlink" title="浅克隆的表现"></a>浅克隆的表现</h1><h3 id="原始类型"><a href="#原始类型" class="headerlink" title="原始类型"></a>原始类型</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//数值克隆的表现</span></div><div class="line"><span class="keyword">var</span> a=<span class="string">"1"</span>;</div><div class="line"><span class="keyword">var</span> b=a;</div><div class="line">b=<span class="string">"2"</span>;</div><div class="line"><span class="built_in">console</span>.log(a);<span class="comment">// "1"</span></div><div class="line"><span class="built_in">console</span>.log(b);<span class="comment">// "2"</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//字符串克隆的表现</span></div><div class="line"><span class="keyword">var</span> c=<span class="string">"1"</span>;</div><div class="line"><span class="keyword">var</span> d=c;</div><div class="line">d=<span class="string">"2"</span>;</div><div class="line"><span class="built_in">console</span>.log(c);<span class="comment">// "1"</span></div><div class="line"><span class="built_in">console</span>.log(d);<span class="comment">// "2"</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//布尔值克隆的表现</span></div><div class="line"><span class="keyword">var</span> x=<span class="literal">true</span>;</div><div class="line"><span class="keyword">var</span> y=x;</div><div class="line">y=<span class="literal">false</span>;</div><div class="line"><span class="built_in">console</span>.log(x);<span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(y);<span class="comment">// false</span></div></pre></td></tr></table></figure>
+<p>从上面的代码大家可以看出，原始类型即使我们采用普通的克隆方式仍能得到正确的结果，原因就是原始类型存储的是对象的实际数据。</p>
+<h3 id="对象类型"><a href="#对象类型" class="headerlink" title="对象类型"></a>对象类型</h3><p>前面说过，函数式一等对象，当然也是对象类型，但是函数的克隆通过浅克隆即可实现<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> m=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="number">1</span>);&#125;;</div><div class="line"><span class="keyword">var</span> n=m;</div><div class="line">n=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="number">2</span>);&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(m());<span class="comment">//1</span></div><div class="line"><span class="built_in">console</span>.log(n());<span class="comment">//2</span></div></pre></td></tr></table></figure></p>
+<p>大家能看到，我们直接通过普通赋值的方式，就实现了函数的克隆，并且不会影响之前的对象。原因就是函数的克隆会在内存单独开辟一块空间，互不影响。</p>
+<p>好了，说了这个特殊的”关系户“以后，我们来说说普通的”选手“。为了方便后续的代码表现，我这里定义一个复杂的对象类型oPerson。下面看一下对象类型的浅复制有什么危害：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> oPerson=&#123;</div><div class="line">    <span class="attr">oName</span>:<span class="string">"rookiebob"</span>,</div><div class="line">    <span class="attr">oAge</span>:<span class="string">"18"</span>,</div><div class="line">    <span class="attr">oAddress</span>:&#123;</div><div class="line">        <span class="attr">province</span>:<span class="string">"beijing"</span></div><div class="line">    &#125;,    </div><div class="line">    <span class="attr">ofavorite</span>:[</div><div class="line">        <span class="string">"swimming"</span>,</div><div class="line">        &#123;<span class="attr">reading</span>:<span class="string">"history book"</span>&#125;</div><div class="line">    ],</div><div class="line">    <span class="attr">skill</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">"bob is coding"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> result=&#123;&#125;;</div><div class="line">    <span class="keyword">for</span>(key <span class="keyword">in</span> obj)&#123;</div><div class="line">        result[key]=obj[key];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> oNew=clone(oPerson);</div><div class="line"><span class="built_in">console</span>.log(oPerson.oAddress.province);<span class="comment">//beijing</span></div><div class="line">oNew.oAddress.province=<span class="string">"shanghai"</span>;</div><div class="line"><span class="built_in">console</span>.log(oPerson.oAddress.province);<span class="comment">//shanghai</span></div></pre></td></tr></table></figure></p>
+<p>通过上面的代码，大家能看到，经过对象克隆以后，我修改oNew的地址，发现原对象oPerson也被修改了。这说明对象的克隆不够彻底，那也就是说深度克隆失败！</p>
+<h1 id="深克隆的实现"><a href="#深克隆的实现" class="headerlink" title="深克隆的实现"></a>深克隆的实现</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">obj,newObj</span>)</span>&#123;</div><div class="line">   <span class="keyword">var</span> newObj = newObj || &#123;&#125;;</div><div class="line">   <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> obj)&#123;</div><div class="line">     <span class="keyword">if</span>(type <span class="keyword">of</span> obj == <span class="string">"object"</span>)&#123;</div><div class="line">       newObj[key] = (obj[key].constructor === <span class="built_in">Array</span>) ? [] : &#123;&#125;;</div><div class="line">       deepClone(obj[key] , newObj[key]);</div><div class="line">     &#125;<span class="keyword">else</span>&#123;</div><div class="line">       newObj[key] = obj[key];</div><div class="line">     &#125;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">return</span> newObj;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -369,6 +381,10 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/content/排序算法解析--冒泡排序、快速排序/" rel="next" title="排序算法解析--冒泡排序、快速排序">
+                <i class="fa fa-chevron-left"></i> 排序算法解析--冒泡排序、快速排序
+              </a>
             
           </div>
 
@@ -450,7 +466,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -498,7 +514,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#js中的对象"><span class="nav-text">js中的对象</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#js中的对象"><span class="nav-text">js中的对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#克隆的概念"><span class="nav-text">克隆的概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浅克隆的表现"><span class="nav-text">浅克隆的表现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原始类型"><span class="nav-text">原始类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象类型"><span class="nav-text">对象类型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深克隆的实现"><span class="nav-text">深克隆的实现</span></a></li></ol></div>
             
 
           </div>
