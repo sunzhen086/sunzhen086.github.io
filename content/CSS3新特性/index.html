@@ -32,7 +32,7 @@
 
   
   
-  <link href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -66,9 +66,9 @@
 
 
 
-<link href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/blog/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="CSS3," />
@@ -80,7 +80,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=5.1.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
@@ -91,23 +91,23 @@
 <meta name="keywords" content="CSS3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS3新特性">
-<meta property="og:url" content="https://sunzhen086.github.io/blog/content/CSS3新特性/index.html">
+<meta property="og:url" content="https://sunzhen086.github.io/content/CSS3新特性/index.html">
 <meta property="og:site_name" content="孙振的博客">
 <meta property="og:description" content="CSS3 选择器（Selector）123456789101112131415body &amp;gt; .mainTabContainer  tbody:nth-child(even)&amp;#123; background-color: white;&amp;#125;body &amp;gt; .mainTabContainer  tr:nth-child(odd)&amp;#123; background-color: bla">
-<meta property="og:image" content="https://sunzhen086.github.io/blog/image/image036.gif">
-<meta property="og:image" content="https://sunzhen086.github.io/blog/image/image046.gif">
+<meta property="og:image" content="https://sunzhen086.github.io/image/image036.gif">
+<meta property="og:image" content="https://sunzhen086.github.io/image/image046.gif">
 <meta property="og:updated_time" content="2017-04-13T06:37:54.604Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS3新特性">
 <meta name="twitter:description" content="CSS3 选择器（Selector）123456789101112131415body &amp;gt; .mainTabContainer  tbody:nth-child(even)&amp;#123; background-color: white;&amp;#125;body &amp;gt; .mainTabContainer  tr:nth-child(odd)&amp;#123; background-color: bla">
-<meta name="twitter:image" content="https://sunzhen086.github.io/blog/image/image036.gif">
+<meta name="twitter:image" content="https://sunzhen086.github.io/image/image036.gif">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/blog/',
+    root: '/',
     scheme: 'Pisces',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
@@ -128,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="https://sunzhen086.github.io/blog/content/CSS3新特性/"/>
+  <link rel="canonical" href="https://sunzhen086.github.io/content/CSS3新特性/"/>
 
 
 
@@ -168,7 +168,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/blog/"  class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">孙振的博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -196,7 +196,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/blog/" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -206,7 +206,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/blog/tags" rel="section">
+          <a href="/tags" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -216,7 +216,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/blog/archives" rel="section">
+          <a href="/archives" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -253,7 +253,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunzhen086.github.io/blog/blog/content/CSS3新特性/">
+    <link itemprop="mainEntityOfPage" href="https://sunzhen086.github.io/content/CSS3新特性/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sunzhen">
@@ -365,12 +365,12 @@
 <li>background-break: each-box; 为每个盒子单独重绘背景。</li>
 </ul>
 <p>这种属性让您可以设定复杂元素的背景属性。<br>最为重要的一点，CSS3 中支持多背景图片，参考如下代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line"><span class="attribute">background</span>: <span class="built_in">url</span>(src/zippy-plus.png) <span class="number">10px</span> center no-repeat,</div><div class="line"> <span class="built_in">url</span>(src/gray_lines_bg.png) <span class="number">10px</span> center repeat-x;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>此为同一元素两个背景的案例，其中一个重复显示，一个不重复。参考一下效果图：<br><img src="/blog/image/image036.gif"></p>
+<p>此为同一元素两个背景的案例，其中一个重复显示，一个不重复。参考一下效果图：<br><img src="/image/image036.gif"></p>
 <h1 id="CSS3-的盒子模型"><a href="#CSS3-的盒子模型" class="headerlink" title="CSS3 的盒子模型"></a>CSS3 的盒子模型</h1><p>参考文章：<br><a href="/blog/content/弹性布局（Flex布局）/">弹性布局（Flex布局）</a></p>
 <h1 id="CSS3-的-Transitions-Transforms-和-Animation"><a href="#CSS3-的-Transitions-Transforms-和-Animation" class="headerlink" title="CSS3 的 Transitions, Transforms 和 Animation"></a>CSS3 的 Transitions, Transforms 和 Animation</h1><h3 id="Transitions"><a href="#Transitions" class="headerlink" title="Transitions"></a>Transitions</h3><p>先说说 Transition，Transition 有下面些具体属性：<br>transition-property：用于指定过渡的性质，比如 transition-property:backgrond 就是指 backgound 参与这个过渡<br>transition-duration：用于指定这个过渡的持续时间<br>transition-delay：用于制定延迟过渡的时间<br>transition-timing-function：用于指定过渡类型，有 ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier<br>可能您觉得摸不着头脑，其实很简单，我们用一个例子说明，参看一下如下代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"transDiv"</span> <span class="attr">class</span>=<span class="string">"transStart"</span>&gt;</span> transition <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"> .transStart &#123;</div><div class="line">    background-color: white;</div><div class="line">    -webkit-transition: background-color 0.3s linear;</div><div class="line">    -moz-transition: background-color 0.3s linear;</div><div class="line">    -o-transition: background-color 0.3s linear;</div><div class="line">    transition: background-color 0.3s linear;</div><div class="line"> &#125;</div><div class="line"> .transEnd &#123;</div><div class="line">    background-color: red;</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
 <p>这里他说明的是，这里 id 为“transDiv”的 div，当它的初始“background-color”属性变化时（被 JavaScript 修改），会呈现出一种变化效果，持续时间为 0.3 秒，效果为均匀变换（linear）。如：该 div 的 class 属性由“transStart”改为“transEnd”，其背景会由白（white）渐变到红（red）。</p>
 <h3 id="Transform"><a href="#Transform" class="headerlink" title="Transform"></a>Transform</h3><p>再来看看 Transform，其实就是指拉伸，压缩，旋转，偏移等等一些图形学里面的基本变换。见如下代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.skew</span> &#123;</div><div class="line">  <span class="attribute">-webkit-transform</span>: <span class="built_in">skew</span>(50deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.scale</span> &#123;</div><div class="line">  <span class="attribute">-webkit-transform</span>: <span class="built_in">scale</span>(2, 0.5);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.rotate</span> &#123;</div><div class="line">  <span class="attribute">-webkit-transform</span>: <span class="built_in">rotate</span>(30deg);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.translate</span> &#123;</div><div class="line">  <span class="attribute">-webkit-transform</span>: <span class="built_in">translate</span>(50px, 50px);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.all_in_one_transform</span> &#123;</div><div class="line">  <span class="attribute">-webkit-transform</span>: <span class="built_in">skew</span>(20deg) <span class="built_in">scale</span>(1.1, 1.1) <span class="built_in">rotate</span>(40deg) <span class="built_in">translate</span>(10px, 15px);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>“skew”是倾斜，“scale”是缩放，“rotate”是旋转，“translate”是平移。最后需要说明一点，transform 支持综合变换。可见其效果图如下：<br><img src="/blog/image/image046.gif"></p>
+<p>“skew”是倾斜，“scale”是缩放，“rotate”是旋转，“translate”是平移。最后需要说明一点，transform 支持综合变换。可见其效果图如下：<br><img src="/image/image046.gif"></p>
 <h3 id="Animation"><a href="#Animation" class="headerlink" title="Animation"></a>Animation</h3><p>最后，我们来说说 Animation 吧。它可以说开辟了 CSS 的新纪元，让 CSS 脱离了“静止”这一约定俗成的前提。以 webkit 为例，见如下代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> anim1 &#123;</div><div class="line">  0% &#123;</div><div class="line">      <span class="attribute">Opacity</span>: <span class="number">0</span>;</div><div class="line">      <span class="attribute">Font-size</span>: <span class="number">12px</span>;</div><div class="line">  &#125;</div><div class="line">  100% &#123;</div><div class="line">      <span class="attribute">Opacity</span>: <span class="number">1</span>;</div><div class="line">      <span class="attribute">Font-size</span>: <span class="number">24px</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.anim1Div</span> &#123;</div><div class="line">    <span class="attribute">-webkit-animation-name</span>: anim1 ;<span class="comment">/*与上边定义对应*/</span></div><div class="line">    <span class="attribute">-webkit-animation-duration</span>: <span class="number">1.5s</span>;</div><div class="line">    <span class="attribute">-webkit-animation-iteration-count</span>: <span class="number">4</span>;</div><div class="line">    <span class="attribute">-webkit-animation-direction</span>: alternate;</div><div class="line">    <span class="attribute">-webkit-animation-timing-function</span>: ease-in-out;</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
 
       
@@ -401,7 +401,7 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/CSS3/" rel="tag"># CSS3</a>
+            <a href="/tags/CSS3/" rel="tag"># CSS3</a>
           
         </div>
       
@@ -414,7 +414,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/content/CSS3的性能与兼容性/" rel="next" title="CSS3的性能与兼容性">
+              <a href="/content/CSS3的性能与兼容性/" rel="next" title="CSS3的性能与兼容性">
                 <i class="fa fa-chevron-left"></i> CSS3的性能与兼容性
               </a>
             
@@ -424,7 +424,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/content/CSS选择器优先级及其性能优化/" rel="prev" title="CSS选择器优先级及其性能优化">
+              <a href="/content/CSS选择器优先级及其性能优化/" rel="prev" title="CSS选择器优先级及其性能优化">
                 CSS选择器优先级及其性能优化 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -497,7 +497,7 @@
 
           
             <div class="site-state-item site-state-posts">
-              <a href="/blog/archives">
+              <a href="/archives">
                 <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">日志</span>
               </a>
@@ -510,7 +510,7 @@
             
             
             <div class="site-state-item site-state-tags">
-              <a href="/blog/tags/index.html">
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
@@ -628,53 +628,53 @@
 
 
   
-  <script type="text/javascript" src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
-  <script type="text/javascript" src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
-  <script type="text/javascript" src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/blog/js/src/affix.js?v=5.1.0"></script>
-
-  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=5.1.0"></script>
-
-
-
-  
-  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.0"></script>
-
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
 
 
-  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
 
 
 
