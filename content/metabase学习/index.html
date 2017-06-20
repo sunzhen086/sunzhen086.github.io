@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS,响应式," />
+  <meta name="keywords" content="数据可视化," />
 
 
 
@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="viewportwidth=device-width:你可以定义viewport的宽度.如果你不使用width=device-width,在移动端上你的页面延伸会超过视窗布局的宽度(width=980px),如果你使用了width=device-width,你的页面将会显示为合适的移动端宽度(width=320px),我们可以使用meta标记:1&amp;lt;meta name=&quot;viewport&quot; c">
-<meta name="keywords" content="CSS,响应式">
+<meta name="description" content="什么是MetabaseMetabase 是一个简单又强大的数据分析工具，可以把数据分析常用的查询放到一个易于操作的界面上来进行，这样，不懂SQL的业务人员也可以快速的掌握业务数据。 安装最简单的安装方式就是到Metabase官网上去下载它的jar包。然后切换到jar包的目录下，执行1java -jar metabase.jar 当然你需要有java的运行环境，java的版本需要1.7及以上。 运行">
+<meta name="keywords" content="数据可视化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="viewport和media query">
-<meta property="og:url" content="https://sunzhen086.github.io/content/viewport和media query/index.html">
+<meta property="og:title" content="metabase学习">
+<meta property="og:url" content="https://sunzhen086.github.io/content/metabase学习/index.html">
 <meta property="og:site_name" content="孙振的博客">
-<meta property="og:description" content="viewportwidth=device-width:你可以定义viewport的宽度.如果你不使用width=device-width,在移动端上你的页面延伸会超过视窗布局的宽度(width=980px),如果你使用了width=device-width,你的页面将会显示为合适的移动端宽度(width=320px),我们可以使用meta标记:1&amp;lt;meta name=&quot;viewport&quot; c">
-<meta property="og:updated_time" content="2017-04-11T08:08:42.326Z">
+<meta property="og:description" content="什么是MetabaseMetabase 是一个简单又强大的数据分析工具，可以把数据分析常用的查询放到一个易于操作的界面上来进行，这样，不懂SQL的业务人员也可以快速的掌握业务数据。 安装最简单的安装方式就是到Metabase官网上去下载它的jar包。然后切换到jar包的目录下，执行1java -jar metabase.jar 当然你需要有java的运行环境，java的版本需要1.7及以上。 运行">
+<meta property="og:updated_time" content="2017-05-31T09:32:55.404Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="viewport和media query">
-<meta name="twitter:description" content="viewportwidth=device-width:你可以定义viewport的宽度.如果你不使用width=device-width,在移动端上你的页面延伸会超过视窗布局的宽度(width=980px),如果你使用了width=device-width,你的页面将会显示为合适的移动端宽度(width=320px),我们可以使用meta标记:1&amp;lt;meta name=&quot;viewport&quot; c">
+<meta name="twitter:title" content="metabase学习">
+<meta name="twitter:description" content="什么是MetabaseMetabase 是一个简单又强大的数据分析工具，可以把数据分析常用的查询放到一个易于操作的界面上来进行，这样，不懂SQL的业务人员也可以快速的掌握业务数据。 安装最简单的安装方式就是到Metabase官网上去下载它的jar包。然后切换到jar包的目录下，执行1java -jar metabase.jar 当然你需要有java的运行环境，java的版本需要1.7及以上。 运行">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://sunzhen086.github.io/content/viewport和media query/"/>
+  <link rel="canonical" href="https://sunzhen086.github.io/content/metabase学习/"/>
 
 
 
 
 
-  <title> viewport和media query | 孙振的博客 </title>
+  <title> metabase学习 | 孙振的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -250,7 +250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunzhen086.github.io/content/viewport和media query/">
+    <link itemprop="mainEntityOfPage" href="https://sunzhen086.github.io/content/metabase学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sunzhen">
@@ -271,7 +271,7 @@
             
             
               
-                viewport和media query
+                metabase学习
               
             
           </h1>
@@ -286,8 +286,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-11T15:44:00+08:00">
-                2017-04-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-31T17:06:10+08:00">
+                2017-05-31
               </time>
             
 
@@ -322,11 +322,12 @@
       
 
       
-        <h1 id="viewport"><a href="#viewport" class="headerlink" title="viewport"></a>viewport</h1><h3 id="width-device-width"><a href="#width-device-width" class="headerlink" title="width=device-width:"></a>width=device-width:</h3><p>你可以定义viewport的宽度.如果你不使用width=device-width,在移动端上你的页面延伸会超过视窗布局的宽度(width=980px),如果你使用了width=device-width,你的页面将会显示为合适的移动端宽度(width=320px),我们可以使用meta标记:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width"</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>我们看见很多网站都建议把content属性的值设置为width=device-width。这相当于告诉浏览器将页面宽度假设为设备宽度。不幸的是，只有当设备是纵向时假设才是正确的。当我们把设备旋转成横向时，device-width还是和纵向的一样（比如，320px），这意味着，即使我们把页面设计成适应了480px横向设备，它还是会返回320px的效果。<br>如果我们的页面在纵向和横向设备中样式相同，那么我们就可以用width=device-width就足够了，需要注意的是这个是唯一告诉android设备使用设备宽度的方法。</p>
-<h3 id="initial-scale-1-0-maximum-scale-1-0"><a href="#initial-scale-1-0-maximum-scale-1-0" class="headerlink" title="initial-scale=1.0,maximum-scale=1.0"></a>initial-scale=1.0,maximum-scale=1.0</h3><p> 在大多数手机上,默认的缩放在手机浏览器上可能会触发”zoom”.为了阻止用户缩放,你可以设置initial-scale=1.0,下面是移动视窗的完整写法:<br> <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<h1 id="Media-Queries"><a href="#Media-Queries" class="headerlink" title="Media Queries"></a>Media Queries</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">media</span> screen and (max-width: <span class="number">600px</span>) &#123; <span class="comment">/*当屏幕尺寸小于600px时，应用下面的CSS样式*/</span></div><div class="line">  <span class="selector-class">.class</span> &#123;</div><div class="line">    <span class="attribute">background</span>: <span class="number">#ccc</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>要注意的是由于网页会根据屏幕宽度调整布局，所以不能使用绝对宽度的布局，也不能使用具有绝对宽度的元素。这一条非常重要，否则会出现横向滚动条。 </p>
+        <h1 id="什么是Metabase"><a href="#什么是Metabase" class="headerlink" title="什么是Metabase"></a>什么是Metabase</h1><p>Metabase 是一个简单又强大的数据分析工具，可以把数据分析常用的查询放到一个易于操作的界面上来进行，这样，不懂SQL的业务人员也可以快速的掌握业务数据。</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>最简单的安装方式就是到<a href="http://www.metabase.com/start/jar.html" target="_blank" rel="external">Metabase官网</a>上去下载它的jar包。然后切换到jar包的目录下，执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -jar metabase.jar</div></pre></td></tr></table></figure></p>
+<p>当然你需要有java的运行环境，java的版本需要1.7及以上。</p>
+<h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><p>上述步骤会启动一个使用默认参数的Metabase应用，在命令行窗口内你能看到一些启动的日志。一旦Metabase完全启动日志是这样子的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">2015-10-14 22:17:50,960 [INFO ] metabase.core :: Metabase Initialization COMPLETE</div><div class="line">2015-10-14 22:17:51,004 [INFO ] metabase.core :: Launching Embedded Jetty Webserver with config:</div><div class="line">&#123;:port 3000, :host &quot;localhost&quot;&#125;</div><div class="line">2015-10-14 22:17:51,024 [INFO ] org.eclipse.jetty.server.Server :: jetty-9.2.z-SNAPSHOT</div><div class="line">2015-10-14 22:17:51,049 [INFO ] org.eclipse.jetty.server.ServerConnector :: Started ServerConnector@30aba609&#123;HTTP/1.1&#125;&#123;localhost:3000&#125;</div><div class="line">2015-10-14 22:17:51,050 [INFO ] org.eclipse.jetty.server.Server :: Started @35910ms</div></pre></td></tr></table></figure></p>
+<p>PS:我再这一步的时候，一开始启动报错，错误信息如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">05-31 17:29:53 [1mERROR metabase.driver[0m :: Failed to connect to database: Timed out after 5000 milliseconds.</div><div class="line">java.lang.AssertionError: Assert failed: Unable to connect to Metabase h2 DB.</div><div class="line">(binding [*allow-potentailly-unsafe-connections* true] (require (quote metabase.driver)) ((resolve (quote metabase.driver/can-connect-with-details?)) engine details))</div><div class="line">        at metabase.db$verify_db_connection.invokeStatic(db.clj:334)</div><div class="line">        at metabase.db$verify_db_connection.invoke(db.clj:327)</div><div class="line">        at metabase.db$verify_db_connection.invokeStatic(db.clj:330)</div><div class="line">        at metabase.db$verify_db_connection.invoke(db.clj:327)</div><div class="line">        at metabase.db$setup_db_BANG_.invokeStatic(db.clj:382)</div><div class="line">        at metabase.db$setup_db_BANG_.doInvoke(db.clj:376)</div><div class="line">        at clojure.lang.RestFn.invoke(RestFn.java:421)</div><div class="line">        at metabase.core$init_BANG_.invokeStatic(core.clj:103)</div><div class="line">        at metabase.core$init_BANG_.invoke(core.clj:82)</div><div class="line">        at metabase.core$start_normally.invokeStatic(core.clj:187)</div><div class="line">        at metabase.core$start_normally.invoke(core.clj:181)</div><div class="line">        at metabase.core$_main.invokeStatic(core.clj:279)</div><div class="line">        at metabase.core$_main.doInvoke(core.clj:274)</div><div class="line">        at clojure.lang.RestFn.invoke(RestFn.java:397)</div><div class="line">        at clojure.lang.AFn.applyToHelper(AFn.java:152)</div><div class="line">        at clojure.lang.RestFn.applyTo(RestFn.java:132)</div><div class="line">        at metabase.core.main(Unknown Source)</div></pre></td></tr></table></figure></p>
+<p>经过一系列的折腾发现，原来是我PC上装了vagrant，每一个vagrant虚拟机实例都会创建一个虚拟网卡，把这些虚拟网卡禁用了就好了。</p>
 
       
     </div>
@@ -356,9 +357,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag"># CSS</a>
-          
-            <a href="/tags/响应式/" rel="tag"># 响应式</a>
+            <a href="/tags/数据可视化/" rel="tag"># 数据可视化</a>
           
         </div>
       
@@ -371,8 +370,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/content/常见的原生javascript DOM操作/" rel="next" title="常见的原生javascript DOM操作">
-                <i class="fa fa-chevron-left"></i> 常见的原生javascript DOM操作
+              <a href="/content/我的新博客20170620/" rel="next" title="我的新博客20170620">
+                <i class="fa fa-chevron-left"></i> 我的新博客20170620
               </a>
             
           </div>
@@ -381,8 +380,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/content/CSS3的性能与兼容性/" rel="prev" title="CSS3的性能与兼容性">
-                CSS3的性能与兼容性 <i class="fa fa-chevron-right"></i>
+              <a href="/content/vue源码学习笔记/" rel="prev" title="vue源码学习笔记">
+                vue源码学习笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -503,7 +502,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#viewport"><span class="nav-text">viewport</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#width-device-width"><span class="nav-text">width=device-width:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#initial-scale-1-0-maximum-scale-1-0"><span class="nav-text">initial-scale=1.0,maximum-scale=1.0</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Media-Queries"><span class="nav-text">Media Queries</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是Metabase"><span class="nav-text">什么是Metabase</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行"><span class="nav-text">运行</span></a></li></ol></div>
             
 
           </div>

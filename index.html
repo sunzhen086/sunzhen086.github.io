@@ -250,6 +250,374 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunzhen086.github.io/content/我的新博客20170620/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sunzhen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/16077783?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="孙振的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/content/我的新博客20170620/" itemprop="url">
+                  我的新博客20170620
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-20T08:51:40+08:00">
+                2017-06-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p>111111</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunzhen086.github.io/content/metabase学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sunzhen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/16077783?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="孙振的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/content/metabase学习/" itemprop="url">
+                  metabase学习
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-31T17:06:10+08:00">
+                2017-05-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="什么是Metabase"><a href="#什么是Metabase" class="headerlink" title="什么是Metabase"></a>什么是Metabase</h1><p>Metabase 是一个简单又强大的数据分析工具，可以把数据分析常用的查询放到一个易于操作的界面上来进行，这样，不懂SQL的业务人员也可以快速的掌握业务数据。</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>最简单的安装方式就是到<a href="http://www.metabase.com/start/jar.html" target="_blank" rel="external">Metabase官网</a>上去下载它的jar包。然后切换到jar包的目录下，执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -jar metabase.jar</div></pre></td></tr></table></figure></p>
+<p>当然你需要有java的运行环境，java的版本需要1.7及以上。</p>
+<h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><p>上述步骤会启动一个使用默认参数的Metabase应用，在命令行窗口内你能看到一些启动的日志。一旦Metabase完全启动日志是这样子的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">2015-10-14 22:17:50,960 [INFO ] metabase.core :: Metabase Initialization COMPLETE</div><div class="line">2015-10-14 22:17:51,004 [INFO ] metabase.core :: Launching Embedded Jetty Webserver with config:</div><div class="line">&#123;:port 3000, :host &quot;localhost&quot;&#125;</div><div class="line">2015-10-14 22:17:51,024 [INFO ] org.eclipse.jetty.server.Server :: jetty-9.2.z-SNAPSHOT</div><div class="line">2015-10-14 22:17:51,049 [INFO ] org.eclipse.jetty.server.ServerConnector :: Started ServerConnector@30aba609&#123;HTTP/1.1&#125;&#123;localhost:3000&#125;</div><div class="line">2015-10-14 22:17:51,050 [INFO ] org.eclipse.jetty.server.Server :: Started @35910ms</div></pre></td></tr></table></figure></p>
+<p>PS:我再这一步的时候，一开始启动报错，错误信息如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">05-31 17:29:53 [1mERROR metabase.driver[0m :: Failed to connect to database: Timed out after 5000 milliseconds.</div><div class="line">java.lang.AssertionError: Assert failed: Unable to connect to Metabase h2 DB.</div><div class="line">(binding [*allow-potentailly-unsafe-connections* true] (require (quote metabase.driver)) ((resolve (quote metabase.driver/can-connect-with-details?)) engine details))</div><div class="line">        at metabase.db$verify_db_connection.invokeStatic(db.clj:334)</div><div class="line">        at metabase.db$verify_db_connection.invoke(db.clj:327)</div><div class="line">        at metabase.db$verify_db_connection.invokeStatic(db.clj:330)</div><div class="line">        at metabase.db$verify_db_connection.invoke(db.clj:327)</div><div class="line">        at metabase.db$setup_db_BANG_.invokeStatic(db.clj:382)</div><div class="line">        at metabase.db$setup_db_BANG_.doInvoke(db.clj:376)</div><div class="line">        at clojure.lang.RestFn.invoke(RestFn.java:421)</div><div class="line">        at metabase.core$init_BANG_.invokeStatic(core.clj:103)</div><div class="line">        at metabase.core$init_BANG_.invoke(core.clj:82)</div><div class="line">        at metabase.core$start_normally.invokeStatic(core.clj:187)</div><div class="line">        at metabase.core$start_normally.invoke(core.clj:181)</div><div class="line">        at metabase.core$_main.invokeStatic(core.clj:279)</div><div class="line">        at metabase.core$_main.doInvoke(core.clj:274)</div><div class="line">        at clojure.lang.RestFn.invoke(RestFn.java:397)</div><div class="line">        at clojure.lang.AFn.applyToHelper(AFn.java:152)</div><div class="line">        at clojure.lang.RestFn.applyTo(RestFn.java:132)</div><div class="line">        at metabase.core.main(Unknown Source)</div></pre></td></tr></table></figure></p>
+<p>经过一系列的折腾发现，原来是我PC上装了vagrant，每一个vagrant虚拟机实例都会创建一个虚拟网卡，把这些虚拟网卡禁用了就好了。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://sunzhen086.github.io/content/vue源码学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sunzhen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/16077783?s=200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="孙振的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/content/vue源码学习笔记/" itemprop="url">
+                  vue源码学习笔记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-03T19:15:43+08:00">
+                2017-05-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>读一读优秀开源框架的代码，是对技术提升比较有帮助的一条途径，之前用vue做过一个小项目，觉得真心不错，想读一读源码又不知道从哪入手，正巧某天刷知乎时，看到有人问到如何读vue的源码， 尤神亲答，推荐了一篇博客，转录在此，原文见<a href="http://jiongks.name/blog/vue-code-review/" target="_blank" rel="external">Vue.js 源码学习笔记</a></p>
+<h1 id="程序结构梳理"><a href="#程序结构梳理" class="headerlink" title="程序结构梳理"></a>程序结构梳理</h1>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://sunzhen086.github.io/content/在浏览器里敲下URL到底发生了什么/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1212,577 +1580,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunzhen086.github.io/content/兼容绑定事件的3种方法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="sunzhen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/16077783?s=200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="孙振的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/content/兼容绑定事件的3种方法/" itemprop="url">
-                  兼容绑定事件的3种方法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-12T16:27:00+08:00">
-                2017-04-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="直接绑定-不利于UI和代码分离-event详见后面）"><a href="#直接绑定-不利于UI和代码分离-event详见后面）" class="headerlink" title="直接绑定(不利于UI和代码分离,event详见后面）"></a>直接绑定(不利于UI和代码分离,event详见后面）</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"doEventThing(event)"</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="DOM事件句柄"><a href="#DOM事件句柄" class="headerlink" title="DOM事件句柄"></a>DOM事件句柄</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"divid"</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div></pre></td></tr></table></figure>
-<h3 id="侦听函数"><a href="#侦听函数" class="headerlink" title="侦听函数"></a>侦听函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> tb = <span class="built_in">document</span>.getelementbyid(<span class="string">"tab1"</span>);   </div><div class="line"><span class="keyword">if</span>(<span class="built_in">window</span>.event==<span class="literal">null</span>)&#123;<span class="comment">// 只有ie下，event是window的对象属性，注意两个侦听函数的区别.该方法只能在没定义event才行  </span></div><div class="line">  td.attachEvent(<span class="string">'onclick'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="string">'21'</span>);&#125;);   </div><div class="line">  td.attachEvent(<span class="string">'onclick'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="string">'21'</span>);&#125;)  </div><div class="line">&#125;  </div><div class="line"><span class="keyword">else</span> &#123; <span class="comment">// mozilla, netscape, firefox，w3c  </span></div><div class="line">  td.addEventListener(<span class="string">'click'</span>, alert(<span class="string">'11'</span>), <span class="literal">false</span>);   </div><div class="line">  td.addEventListener(<span class="string">'click'</span>, alert(<span class="string">'12'</span>), <span class="literal">false</span>);   </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunzhen086.github.io/content/关于变量类型的判断/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="sunzhen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/16077783?s=200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="孙振的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/content/关于变量类型的判断/" itemprop="url">
-                  关于变量类型的判断
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-12T15:31:54+08:00">
-                2017-04-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在JavaScript中，有5种基本数据类型和1种复杂数据类型，基本数据类型有：Undefined, Null, Boolean, Number和String；复杂数据类型是Object，Object中还细分了很多具体的类型，比如：Array, Function, Date等等。今天我们就来探讨一下，使用什么方法判断一个出一个变量的类型。</p>
-<p>在讲解各种方法之前，我们首先定义出几个测试变量，看看后面的方法究竟能把变量的类型解析成什么样子，以下几个变量差不多包含了我们在实际编码中常用的类型。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num  = <span class="number">123</span>;</div><div class="line"><span class="keyword">var</span> str  = <span class="string">'abcdef'</span>;</div><div class="line"><span class="keyword">var</span> bool = <span class="literal">true</span>;</div><div class="line"><span class="keyword">var</span> arr  = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</div><div class="line"><span class="keyword">var</span> json = &#123;<span class="attr">name</span>:<span class="string">'wenzi'</span>, <span class="attr">age</span>:<span class="number">25</span>&#125;;</div><div class="line"><span class="keyword">var</span> func = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="built_in">console</span>.log(<span class="string">'this is function'</span>); &#125;</div><div class="line"><span class="keyword">var</span> und  = <span class="literal">undefined</span>;</div><div class="line"><span class="keyword">var</span> nul  = <span class="literal">null</span>;</div><div class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="keyword">var</span> reg  = <span class="regexp">/^[a-zA-Z]&#123;5,20&#125;$/</span>;</div><div class="line"><span class="keyword">var</span> error= <span class="keyword">new</span> <span class="built_in">Error</span>();</div></pre></td></tr></table></figure>
-<h3 id="使用typeof检测"><a href="#使用typeof检测" class="headerlink" title="使用typeof检测"></a>使用typeof检测</h3><p>我们平时用的最多的就是用typeof检测变量类型了。这次，我们也使用typeof检测变量的类型：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(</div><div class="line">    <span class="keyword">typeof</span> num,</div><div class="line">    <span class="keyword">typeof</span> str,</div><div class="line">    <span class="keyword">typeof</span> bool,</div><div class="line">    <span class="keyword">typeof</span> arr,</div><div class="line">    <span class="keyword">typeof</span> json,</div><div class="line">    <span class="keyword">typeof</span> func,</div><div class="line">    <span class="keyword">typeof</span> und,</div><div class="line">    <span class="keyword">typeof</span> nul,</div><div class="line">    <span class="keyword">typeof</span> date,</div><div class="line">    <span class="keyword">typeof</span> reg,</div><div class="line">    <span class="keyword">typeof</span> error</div><div class="line">);</div><div class="line"><span class="comment">// number string boolean object object function undefined object object object object</span></div></pre></td></tr></table></figure>
-<p>从输出的结果来看，arr, json, nul, date, reg, error 全部被检测为object类型，其他的变量能够被正确检测出来。当需要变量是否是number, string, boolean, function, undefined, json类型时，可以使用typeof进行判断。其他变量是判断不出类型的，包括null。</p>
-<p>还有，typeof是区分不出array和json类型的。因为使用typeof这个变量时，array和json类型输出的都是object。</p>
-<h3 id="使用instance检测"><a href="#使用instance检测" class="headerlink" title="使用instance检测"></a>使用instance检测</h3><p>在 JavaScript 中，判断一个变量的类型常常会用 typeof 运算符，在使用 typeof 运算符时采用引用类型存储值会出现一个问题，无论引用的是什么类型的对象，它都返回 “object”。ECMAScript 引入了另一个 Java 运算符 instanceof 来解决这个问题。instanceof 运算符与 typeof 运算符相似，用于识别正在处理的对象的类型。与 typeof 方法不同的是，instanceof 方法要求开发者明确地确认对象为某特定类型。例如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> Tom = <span class="keyword">new</span> Person();</div><div class="line"><span class="built_in">console</span>.log(Tom <span class="keyword">instanceof</span> Person); <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
-<p>我们再看看下面的例子：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">Student.prototype = <span class="keyword">new</span> Person();</div><div class="line"><span class="keyword">var</span> John = <span class="keyword">new</span> Student();</div><div class="line"><span class="built_in">console</span>.log(John <span class="keyword">instanceof</span> Student); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(John instancdof Person);  <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
-<p>instanceof还能检测出多层继承的关系。</p>
-<p>好了，我们来使用instanceof检测上面的那些变量：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(</div><div class="line">    num <span class="keyword">instanceof</span> <span class="built_in">Number</span>,</div><div class="line">    str <span class="keyword">instanceof</span> <span class="built_in">String</span>,</div><div class="line">    bool <span class="keyword">instanceof</span> <span class="built_in">Boolean</span>,</div><div class="line">    arr <span class="keyword">instanceof</span> <span class="built_in">Array</span>,</div><div class="line">    json <span class="keyword">instanceof</span> <span class="built_in">Object</span>,</div><div class="line">    func <span class="keyword">instanceof</span> <span class="built_in">Function</span>,</div><div class="line">    und <span class="keyword">instanceof</span> <span class="built_in">Object</span>,</div><div class="line">    nul <span class="keyword">instanceof</span> <span class="built_in">Object</span>,</div><div class="line">    date <span class="keyword">instanceof</span> <span class="built_in">Date</span>,</div><div class="line">    reg <span class="keyword">instanceof</span> <span class="built_in">RegExp</span>,</div><div class="line">    error <span class="keyword">instanceof</span> <span class="built_in">Error</span></div><div class="line">)</div><div class="line"><span class="comment">// num : false</span></div><div class="line"><span class="comment">// str : false</span></div><div class="line"><span class="comment">// bool : false</span></div><div class="line"><span class="comment">// arr : true</span></div><div class="line"><span class="comment">// json : true</span></div><div class="line"><span class="comment">// func : true</span></div><div class="line"><span class="comment">// und : false</span></div><div class="line"><span class="comment">// nul : false</span></div><div class="line"><span class="comment">// date : true</span></div><div class="line"><span class="comment">// reg : true</span></div><div class="line"><span class="comment">// error : true</span></div></pre></td></tr></table></figure></p>
-<p>从上面的运行结果我们可以看到，num, str和bool没有检测出他的类型，但是我们使用下面的方式创建num，是可以检测出类型的：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">123</span>);</div><div class="line"><span class="keyword">var</span> str = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'abcdef'</span>);</div><div class="line"><span class="keyword">var</span> boolean = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">true</span>);</div></pre></td></tr></table></figure></p>
-<p>同时，我们也要看到，und和nul是检测的Object类型，才输出的true，因为js中没有Undefined和Null的这种全局类型，他们und和nul都属于Object类型，因此输出了true。</p>
-<h3 id="使用constructor检测"><a href="#使用constructor检测" class="headerlink" title="使用constructor检测"></a>使用constructor检测</h3><p>在使用instanceof检测变量类型时，我们是检测不到number, ‘string’, bool的类型的。因此，我们需要换一种方式来解决这个问题。</p>
-<p>constructor本来是原型对象上的属性，指向构造函数。但是根据实例对象寻找属性的顺序，若实例对象上没有实例属性或方法时，就去原型链上寻找，因此，实例对象也是能使用constructor属性的。</p>
-<p>我们先来输出一下num.constructor的内容，即数字类型的变量的构造函数是什么样子的：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Number</span>(<span class="params"></span>) </span>&#123; [native code] &#125;</div></pre></td></tr></table></figure></p>
-<p>我们可以看到它指向了Number的构造函数，因此，我们可以使用num.constructor==Number来判断num是不是Number类型的，其他的变量也类似：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> Tom = <span class="keyword">new</span> Person();</div><div class="line"></div><div class="line"><span class="comment">// undefined和null没有constructor属性</span></div><div class="line"><span class="built_in">console</span>.log(</div><div class="line">    Tom.constructor==Person,</div><div class="line">    num.constructor==<span class="built_in">Number</span>,</div><div class="line">    str.constructor==<span class="built_in">String</span>,</div><div class="line">    bool.constructor==<span class="built_in">Boolean</span>,</div><div class="line">    arr.constructor==<span class="built_in">Array</span>,</div><div class="line">    json.constructor==<span class="built_in">Object</span>,</div><div class="line">    func.constructor==<span class="built_in">Function</span>,</div><div class="line">    date.constructor==<span class="built_in">Date</span>,</div><div class="line">    reg.constructor==<span class="built_in">RegExp</span>,</div><div class="line">    error.constructor==<span class="built_in">Error</span></div><div class="line">);</div><div class="line"><span class="comment">// 所有结果均为true</span></div></pre></td></tr></table></figure>
-<p>从输出的结果我们可以看出，除了undefined和null，其他类型的变量均能使用constructor判断出类型。</p>
-<p>不过使用constructor也不是保险的，因为constructor属性是可以被修改的，会导致检测出的结果不正确，例如：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">Student.prototype = <span class="keyword">new</span> Person();</div><div class="line"><span class="keyword">var</span> John = <span class="keyword">new</span> Student();</div><div class="line"><span class="built_in">console</span>.log(John.constructor==Student); <span class="comment">// false</span></div><div class="line"><span class="built_in">console</span>.log(John.constructor==Person);  <span class="comment">// true</span></div></pre></td></tr></table></figure>
-<p>在上面的例子中，Student原型中的constructor被修改为指向到Person，导致检测不出实例对象John真实的构造函数。</p>
-<p>同时，使用instaceof和construcor,被判断的array必须是在当前页面声明的！比如，一个页面（父页面）有一个框架，框架中引用了一个页面（子页面），在子页面中声明了一个array，并将其赋值给父页面的一个变量，这时判断该变量，Array == object.constructor;会返回false；<br>原因：<br>1、array属于引用型数据，在传递过程中，仅仅是引用地址的传递。<br>2、每个页面的Array原生对象所引用的地址是不一样的，在子页面声明的array，所对应的构造函数，是子页面的Array对象；父页面来进行判断，使用的Array并不等于子页面的Array；切记，不然很难跟踪问题！</p>
-<h3 id="使用Object-prototype-toString-call"><a href="#使用Object-prototype-toString-call" class="headerlink" title="使用Object.prototype.toString.call"></a>使用Object.prototype.toString.call</h3><p>我们先不管这个是什么，先来看看他是怎么检测变量类型的：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(</div><div class="line">    <span class="built_in">Object</span>.prototype.toString.call(num),</div><div class="line">    <span class="built_in">Object</span>.prototype.toString.call(str),</div><div class="line">    <span class="built_in">Object</span>.prototype.toString.call(bool),</div><div class="line">    <span class="built_in">Object</span>.prototype.toString.call(arr),</div><div class="line">    <span class="built_in">Object</span>.prototype.toString.call(json),</div><div class="line">    <span class="built_in">Object</span>.prototype.toString.call(func),</div><div class="line">    <span class="built_in">Object</span>.prototype.toString.call(und),</div><div class="line">    <span class="built_in">Object</span>.prototype.toString.call(nul),</div><div class="line">    <span class="built_in">Object</span>.prototype.toString.call(date),</div><div class="line">    <span class="built_in">Object</span>.prototype.toString.call(reg),</div><div class="line">    <span class="built_in">Object</span>.prototype.toString.call(error)</div><div class="line">);</div><div class="line"><span class="comment">// '[object Number]' '[object String]' '[object Boolean]' '[object Array]' '[object Object]'</span></div><div class="line"><span class="comment">// '[object Function]' '[object Undefined]' '[object Null]' '[object Date]' '[object RegExp]' '[object Error]'</span></div></pre></td></tr></table></figure></p>
-<p>从输出的结果来看，Object.prototype.toString.call(变量)输出的是一个字符串，字符串里有一个数组，第一个参数是Object，第二个参数就是这个变量的类型，而且，所有变量的类型都检测出来了，我们只需要取出第二个参数即可。或者可以使用Object.prototype.toString.call(arr)==”object Array”来检测变量arr是不是数组。</p>
-<h3 id="jquery中-type的实现"><a href="#jquery中-type的实现" class="headerlink" title="jquery中$.type的实现"></a>jquery中$.type的实现</h3><p>在jquery中提供了一个$.type的接口，来让我们检测变量的类型：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(</div><div class="line">    $.type(num),</div><div class="line">    $.type(str),</div><div class="line">    $.type(bool),</div><div class="line">    $.type(arr),</div><div class="line">    $.type(json),</div><div class="line">    $.type(func),</div><div class="line">    $.type(und),</div><div class="line">    $.type(nul),</div><div class="line">    $.type(date),</div><div class="line">    $.type(reg),</div><div class="line">    $.type(error)</div><div class="line">);</div><div class="line"><span class="comment">// number string boolean array object function undefined null date regexp error</span></div></pre></td></tr></table></figure></p>
-<p>看到输出结果，有没有一种熟悉的感觉？对，他就是上面使用Object.prototype.toString.call(变量)输出的结果的第二个参数呀。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://sunzhen086.github.io/content/常见的原生javascript DOM操作/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="sunzhen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/16077783?s=200">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="孙振的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/content/常见的原生javascript DOM操作/" itemprop="url">
-                  常见的原生javascript DOM操作
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-11T16:03:28+08:00">
-                2017-04-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="创建元素"><a href="#创建元素" class="headerlink" title="创建元素"></a>创建元素</h1><blockquote>
-<p>创建元素：document.createElement()</p>
-</blockquote>
-<p>使用document.createElement()可以创建新元素。这个方法只接受一个参数，即要创建元素的标签名。这个标签名在HTML文档中不区分大小写，在XHTML中区分大小写。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</div></pre></td></tr></table></figure></p>
-<p>使用createElement()方法创建新元素的同时，也为新元素设置了ownerDocument属性，可以操作元素的特性。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">div.id = <span class="string">"myDiv"</span>;</div><div class="line">div.className = <span class="string">"div1"</span>;</div></pre></td></tr></table></figure></p>
-<p>此时，新元素尚未被添加到文档树中，因此设置各种特性均不会影响浏览器的显示。要添加到文档树，可用appendChild()、insertBefore()、replaceChild()。（稍后讲到）<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.body.appendChild(div);</div></pre></td></tr></table></figure></p>
-<p>当把元素添加到文档树中后，这个元素做的任何修改都会实时地反应到浏览器中。</p>
-<p>在IE中可以为createElement()方法传入完整的元素标签和属性。(只在IE中兼容)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.createElement(<span class="string">"&lt;div id=\"mydiv\" class=\"div1\"&gt;&lt;/div&gt;"</span>);</div><div class="line"><span class="comment">//不能再标签里加其他元素节点或者文本节点，如下的方式和上面的得出的节点一样</span></div><div class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.createElement(<span class="string">"&lt;div id=\"mydiv\" class=\"div1\"&gt;12212&lt;/div&gt;"</span>);</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>创建文本节点 ：document.createTextNode</p>
-</blockquote>
-<p>使用document.createTextNode()来创建文本节点，这个方法接受一个参数：要插入节点的文本。与设置已有文本节点的值一样，作为参数的文本将按照HTML或XML的格式进行编码。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.createTextNode(<span class="string">"121212"</span>);</div></pre></td></tr></table></figure></p>
-<p>可以添加多个文本节点。假如两个文本节点时相邻的同胞节点，那么两个文本节点会连起来，中间不会有空格。</p>
-<h1 id="节点关系"><a href="#节点关系" class="headerlink" title="节点关系"></a>节点关系</h1><p>文本关系如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div2"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div3"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div4"</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>父节点：parentNode</p>
-</blockquote>
-<p>parentNode是指定节点的父节点.一个元素节点的父节点可能是一个元素(Element )节点,也可能是一个文档(Document )节点,或者是个文档碎片(DocumentFragment)节点.<br>每一个节点都有一个parentNode属性。</p>
-<p>对于下面的节点类型: Attr, Document, DocumentFragment, Entity, Notation,其parentNode属性返回null。如果当前节点刚刚被建立,还没有被插入到DOM树中,则该节点的parentNode属性也返回null。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> child2 = <span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>);</div><div class="line">    <span class="keyword">var</span> parent = child2.parentNode;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>子节点：childNodes</p>
-</blockquote>
-<p>childNodes 返回包含指定节点的子节点的集合，该集合为即时更新的集合（live collection）。<br>即时更新就是对节点元素的任意修改都会立即反映到结果里。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> child2 = <span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>);</div><div class="line">    <span class="keyword">var</span> parent = child2.parentNode;</div><div class="line">    <span class="keyword">var</span> allChilds = parent.childNodes;</div><div class="line">    <span class="comment">/**</span></div><div class="line">      在IE6下才会返回3</div><div class="line">      在其他浏览器中会返回3个div节点+3个div节点的文本节点+1个自己的文本节点=7</div><div class="line">      下同</div><div class="line">    **/</div><div class="line">    <span class="built_in">console</span>.log(allChilds.length) <span class="comment">// IE下是3，其他浏览器是7</span></div><div class="line"></div><div class="line"></div><div class="line">    <span class="keyword">var</span> nodeAdd = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</div><div class="line">    <span class="keyword">var</span> textAdd = <span class="built_in">document</span>.createTextNode(<span class="string">"这是添加的文本节点"</span>);</div><div class="line">    nodeAdd.appendChild(textAdd);</div><div class="line">    parent.appendChild(nodeAdd);</div><div class="line">    <span class="built_in">console</span>.log(allChilds.length);<span class="comment">// IE下是4，其他浏览器是8</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>兄弟节点：nextSibling，previousSibling</p>
-</blockquote>
-<p>nextSibling返回某节点的下一个兄弟节点，previousSibling返回某节点的上一个兄弟节点，没有的话返回null。<br>注意：可能因为元素换行的原因返回的是text节点。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">    <span class="keyword">var</span> child3 = <span class="built_in">document</span>.getElementById(<span class="string">"div3"</span>);</div><div class="line">    <span class="keyword">var</span> next = child3.nextSibling;</div><div class="line">    <span class="keyword">var</span> previous = child3.previousSibling;</div><div class="line">    <span class="built_in">console</span>.log(next); <span class="comment">// IE下返回div4，其他返回text</span></div><div class="line">    <span class="built_in">console</span>.log(previous)  <span class="comment">// IE下返回div2，其他返回text</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>第一个或最后一个子节点：firstChild、lastChild</p>
-</blockquote>
-<p>firstChild返回node的子节点中的第一个节点的引用，没有返回null<br>lastChild返回node的子节点中的最后一个节点的引用，没有返回null<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> child3 = <span class="built_in">document</span>.getElementById(<span class="string">"div3"</span>);</div><div class="line">    <span class="keyword">var</span> parent = child3.parentNode;</div><div class="line">    <span class="keyword">var</span> first = parent.firstChild; <span class="comment">// IE是div2，其他是text</span></div><div class="line">    <span class="keyword">var</span> last = parent.lastChild; <span class="comment">// IE是div4，其他是text</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<h1 id="节点元素关系"><a href="#节点元素关系" class="headerlink" title="节点元素关系"></a>节点元素关系</h1><p>只算元素，不算文本节点。</p>
-<p>以下三个方法用法和节点关系完全一样，只是这三个方法只看元素节点，不管因为空格、换行造成的文本节点或者手动加上去的文本节点。<br>children： 返回所有元素子节点（IE5+、ff3.5、opera3、chrome，但在IE8及以下会将注释节点看成一个元素节点）</p>
-<p>以下两个IE9+才支持<br>nextElementSibling：返回元素的下一个兄弟元素节点<br>previousElementSibling: 返回元素的上一个兄弟元素节点</p>
-<h1 id="节点元素关系-1"><a href="#节点元素关系-1" class="headerlink" title="节点元素关系"></a>节点元素关系</h1><blockquote>
-<p>appendChild()</p>
-</blockquote>
-<p>appendChild()用于向childNodes列表的末尾添加一个节点，并且返回这个新增的节点。<br>如果传入到appendChild()里的节点已经是文档的一部分了，那结果就是将节点从原来的位置转移到新位置，任何一个节点不能同时出现在文档中的多个位置。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> returnNode = someNode.appendChild(someNode.firstChild); <span class="comment">// 返回第一个节点</span></div><div class="line"><span class="built_in">console</span>.log(returnNode === someNode.firstChild); <span class="comment">// false</span></div><div class="line"><span class="built_in">console</span>.log(returnNode === someNode.lastChild); <span class="comment">// true</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>insetBefore()</p>
-</blockquote>
-<p>insetBefore()可以将节点插入到某个特定的位置。这个方法接受两个参数：要插入的节点和作为参照的节点。<br>插入节点后，被插入的节点变成参照节点的前一个同胞节点，同时被方法返回。 如果参照节点是null，则与appendChild()执行相同的操作。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 插入后成为最后一个子节点</span></div><div class="line"><span class="keyword">var</span> returnNode = someNode.insetBefore(newNode, <span class="literal">null</span>);</div><div class="line"><span class="built_in">console</span>.log(returnNode === someNode.lastChild); <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="comment">// 插入后成为第一个子节点</span></div><div class="line"><span class="keyword">var</span> returnNode = someNode.insetBefore(newNode, someNode.firstChild);</div><div class="line"><span class="built_in">console</span>.log(returnNode === newNode); <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(returnNode === someNode.firstChild); <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="comment">// 插入到最后一个子节点的前面</span></div><div class="line"><span class="keyword">var</span> returnNode = someNode.insetBefore(newNode, someNode.lastChild);</div><div class="line"><span class="built_in">console</span>.log(returnNode === someNode.childNodes[someNode.childnodes.length - <span class="number">2</span>]) <span class="comment">// true</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>替换节点： replaceChild()</p>
-</blockquote>
-<p>replaceChild()接受两个参数：要插入的节点和要被替换的节点。被替换的节点将由这个方法返回并从文档中被移除，同时由要插入的节点占据其位置。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 替换第一个子节点</span></div><div class="line"><span class="keyword">var</span> returnNode = someNode.replaceChild(newNode, someNode.firstChild);</div></pre></td></tr></table></figure></p>
-<p>使用replaceChild()后，被替换的节点的所有关系指针都会被复制到插入的节点上面。</p>
-<blockquote>
-<p>删除节点：removeChild()</p>
-</blockquote>
-<p>该方法移除节点，接受一个参数，即要移除的节点，同时该方法返回被移除的节点。只能是一个节点，不能是一组节点。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 移除第一个子节点</span></div><div class="line"><span class="keyword">var</span> returnNode = someNode.removeChild(newNode, someNode.firstChild);</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>克隆节点：cloneNode(true/false)</p>
-</blockquote>
-<p>返回调用该方法的节点的一个副本。参数表示是否采用深度克隆,如果为true,则该节点的所有后代节点也都会被克隆,如果为false,则只克隆该节点本身，文本或者换行、空格这些不会复制，因为他们都是一个textNode。</p>
-<p>注意: 在DOM4规范中(实现于Gecko 13.0(Firefox 13.0 / Thunderbird 13.0 / SeaMonkey 2.10) , 查看 bug 698391),deep是一个可选参数. 如果省略的话, deep参数的默认值为true,也就是说,深度克隆是默认的.如果想使用浅克隆, 你需要将该参数指定为false。</p>
-<p>在旧版本的浏览器中, 你始终需要指定deep参数。</p>
-<p>克隆一个元素节点会拷贝它所有的属性以及属性值,当然也就包括了属性上绑定的事件(比如onclick=”alert(1)”),但不会拷贝那些使用addEventListener()方法或者node.onclick = fn这种用JavaScript动态绑定的事件。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div1 = <span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>);</div><div class="line"><span class="keyword">var</span> cloneHtml = div1.cloneNode(<span class="literal">true</span>);</div><div class="line"><span class="built_in">document</span>.body.appendChild(cloneHtml);</div></pre></td></tr></table></figure>
-<h1 id="元素选择"><a href="#元素选择" class="headerlink" title="元素选择"></a>元素选择</h1><p>HTML代码示例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"div2"</span> <span class="attr">class</span>=<span class="string">"one"</span> <span class="attr">name</span>=<span class="string">"nameone"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div3"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div4"</span> <span class="attr">name</span>=<span class="string">"div2"</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>querySelector、querySelectorAll(IE8及以上)</p>
-</blockquote>
-<p>Selectors API通过匹配一组选择器的方式来为从DOM中检索Element节点提供一些简单快捷的方法，这比过去必须要在javascript代码中用循环来查找某个你想要的特定元素更快一些。<br>该规范对于使用Document,DocumentFragment和Element接口的对象都增了两种新方法：</p>
-<p>querySelector<br>返回节点子树内与之相匹配的第一个Element节点。如果没有匹配的节点，则返回null。</p>
-<p>querySelectorAll<br>返回一个包含节点子树内所有与之相匹配的Element节点列表，如果没有相匹配的，则返回一个空节点列表。</p>
-<p>注意：由 querySelector()、querySelectorAll()返回的节点列表不是动态实时的（非live Collection）。这和其他DOM查询方法返回动态实时节点列表不一样。</p>
-<p>选择器方法接受一个或多个用逗号分隔的选择器来确定需要被返回的元素。例如，要选择文档中所有CSS的类(class)是warning或者note的段落(p)元素,可以这样写：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> special = <span class="built_in">document</span>.querySelectorAll( <span class="string">"p.warning, p.note"</span> );</div></pre></td></tr></table></figure></p>
-<p>也可以通过ID来查询，例如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> el = <span class="built_in">document</span>.querySelector( <span class="string">"#main, #basic, #exclamation"</span> );</div></pre></td></tr></table></figure></p>
-<p>执行上面的代码后，el就包含了文档中元素的ID是main，basic或exclamation的所有元素中的第一个元素。</p>
-<p>querySelector() and querySelectorAll() 里可以使用任何CSS选择器，他们都不是live Collection：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> notLive = <span class="built_in">document</span>.querySelectorAll(<span class="string">"p"</span>);</div><div class="line"><span class="built_in">console</span>.log(notLive);</div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>).removeChild(<span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>));</div><div class="line"><span class="built_in">console</span>.log(notLive);</div><div class="line"><span class="comment">// 上面两个输出都是输出 `p#div2.one`的引用，没有因为删除了`p`标签而使`notLive`的结果发生变化。</span></div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>getElementById()</p>
-</blockquote>
-<p>返回一个匹配特定 ID的元素。id是大小写敏感的字符串，代表了所要查找的元素的唯一ID，如果没有则返回null。<br>如果新建一个元素，还没有插入到文档中，则不能通过该方法获取到。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> notLive = <span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>);</div><div class="line"><span class="built_in">console</span>.log(notLive.innerHTML);</div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>).removeChild(<span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>));</div><div class="line"><span class="built_in">console</span>.log(notLive.innerHTML);</div><div class="line"><span class="comment">// 上面输出都是2，说明getElementById()也是**非**live collection</span></div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>getElementsByTagName()</p>
-</blockquote>
-<p>document.getElementsByTagName() 方法返回一个实时的包含具有给出标签名的元素们的HTMLCollection。指定的元素的子树会被搜索，包括元素自己。返回的 list 是实时的（live collection），意味着它会随着DOM树的变化自动更新。因此，如果对同一个元素，使用相同的参数，是不需要多次调用document.getElementsByTagName() 的。</p>
-<p>Element.getElementsByTagName()的搜索被限制为指定元素的后代而不是document</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> live = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"p"</span>);</div><div class="line"><span class="built_in">console</span>.log(live[<span class="number">0</span>].innerHTML);</div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>).removeChild(<span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>));</div><div class="line"><span class="built_in">console</span>.log(live[<span class="number">0</span>].innerHTML);</div><div class="line"><span class="comment">// 第一个输出2，第二个报错，因为无法引用到p标签</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>getElementsByName()</p>
-</blockquote>
-<p>该方法返回一个实时的nodelist collection，包含文档中所有name属性匹配的标签。这是一个<strong>live collection</strong>。<br>注意：在IE和opera下，如果某个元素1的name和另一个元素2的id重合，且元素2在元素1的前面，则getElementsByName()会取到元素2。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> live = <span class="built_in">document</span>.getElementsByName(<span class="string">"div2"</span>);</div><div class="line"><span class="built_in">console</span>.log(live[<span class="number">0</span>].innerHTML);</div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>).removeChild(<span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>));</div><div class="line"><span class="built_in">console</span>.log(live[<span class="number">0</span>].innerHTML);</div><div class="line"><span class="comment">// chrome下：全部输出4</span></div><div class="line"><span class="comment">// IE下： 第一个输出2，第二个报错。</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>getElementsByClassName()</p>
-</blockquote>
-<p>该方法返回一个即时更新的（live） HTMLCollection，包含了所有拥有指定 class 的子元素。当在 document 对象上调用此方法时，会检索整个文档，包括根元素。(IE9以下不支持)</p>
-<p>要匹配多个class，则className用空格分开。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">getElementsByClassName(<span class="string">"class1 class2"</span>);</div></pre></td></tr></table></figure></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> live = <span class="built_in">document</span>.getElementsByClassName(<span class="string">"one"</span>);</div><div class="line"><span class="built_in">console</span>.log(live[<span class="number">0</span>].innerHTML);</div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>).removeChild(<span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>));</div><div class="line"><span class="built_in">console</span>.log(live[<span class="number">0</span>].innerHTML);</div><div class="line"><span class="comment">// 第一个返回2，第二个报错</span></div></pre></td></tr></table></figure>
-<h1 id="属性操作"><a href="#属性操作" class="headerlink" title="属性操作"></a>属性操作</h1><blockquote>
-<p>setAttribute()</p>
-</blockquote>
-<p>添加一个新属性（attribute）到元素上，或改变元素上已经存在的属性的值。</p>
-<p>当在 HTML 文档中的 HTML 元素上调用 setAttribute() 方法时，该方法会将其属性名称（attribute name）参数小写化。</p>
-<p>如果指定的属性已经存在，则其值变为传递的值。如果不存在，则创建指定的属性。也可指定为null。如果设置为null，最好使用removeAttribute()。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div2 = <span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>);</div><div class="line">div2.setAttribute(<span class="string">"class"</span>, <span class="string">"new_class"</span>);</div><div class="line">div2.setAttribute(<span class="string">"id"</span>, <span class="string">"new_id"</span>);</div></pre></td></tr></table></figure>
-<p>注意：在IE7下，修改了元素的class，如果已有class，则会出现两个class，通过setAttribute()添加的不生效；如果没有class，则添加上class，但这个添加上去的class的样式不会生效。</p>
-<blockquote>
-<p>removeAttribute()</p>
-</blockquote>
-<p>该方法用于移除元素的属性。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div2 = <span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>);</div><div class="line">div2.removeAttribute(<span class="string">"class"</span>);</div></pre></td></tr></table></figure></p>
-<p>注意：IE7下无法移除 class 属性</p>
-<blockquote>
-<p>getAttribute()</p>
-</blockquote>
-<p>该方法返回元素上指定属性（attribute）的值。如果指定的属性不存在，则返回 null 或 “” （空字符串）（IE5+都返回null）。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div2 = <span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>);</div><div class="line"><span class="keyword">var</span> attr = div2.getAttribute(<span class="string">"class"</span>);</div><div class="line"><span class="built_in">console</span>.log(attr);</div></pre></td></tr></table></figure></p>
-<p>注意：IE7下不能正确返回class，返回的是null，其他正常。</p>
-<blockquote>
-<p>hasAttribute()</p>
-</blockquote>
-<p>hasAttribute() 返回一个布尔值，指示该元素是否包含有指定的属性（attribute）。</p>
-<p>注意：IE7不支持该方法。</p>
-<blockquote>
-<p>自定义属性data-*</p>
-</blockquote>
-<p>html5里有一个data-*去设置获取元素的自定义属性值。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div id=<span class="string">"div1"</span> data-aa=<span class="string">"11"</span>&gt;</div></pre></td></tr></table></figure></p>
-<p>利用div1.dataset可以获得一个DOMStringMap，包含了元素的所有data-*。<br>使用div1.dataset.aa就可以获取11的值。<br>同样，通过设置div1.dataset.bb = “22”就可以设置一个自定义属性值。<br>在不兼容的浏览器里，就使用getAttribute和setAttribute</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div1 = <span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>);</div><div class="line"><span class="keyword">var</span> a = <span class="literal">null</span>;</div><div class="line"><span class="keyword">if</span> (div1.dataset) &#123;</div><div class="line">    a = div1.dataset.aa;</div><div class="line">    div1.dataset.bb = <span class="string">"222"</span>;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    a = div1.getAttribute(<span class="string">"data-aa"</span>);</div><div class="line">    div1.setAttribute(<span class="string">"data-bb"</span>, <span class="string">"2222"</span>);</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(a);</div></pre></td></tr></table></figure>
-<h1 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h1><blockquote>
-<p>addEventListener()</p>
-</blockquote>
-<p>addEventListener()将指定的事件监听器注册到目标对象上，当目标对象触发指定的事件时，指定的回调函数就会触发。目标对象可以是 文档上的元素、 document、 window 或者XMLHttpRequest(比如onreadystatechange事件)。</p>
-<p>IE8及以下不支持此方法且只有事件冒泡没有事件捕获。IE9开始支持此方法，也就有了事件捕获。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div1 = <span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>);</div><div class="line">div1.addEventListener(<span class="string">"click"</span>, listener, <span class="literal">false</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">listener</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'test'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> cloneHtml = div1.cloneNode(<span class="literal">true</span>);</div><div class="line"><span class="built_in">document</span>.body.appendChild(cloneHtml);</div></pre></td></tr></table></figure>
-<p>第一个参数是事件名，第二个是回调函数，第三个参数为true表示捕获，false表示冒泡。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div1 = <span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>);</div><div class="line">div1.addEventListener(<span class="string">"click"</span>, listener1, <span class="literal">true</span>/fasle);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">listener1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">   <span class="built_in">console</span>.log(<span class="string">'test1'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> div2 = <span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>);</div><div class="line">div2.addEventListener(<span class="string">"click"</span>, listener2, <span class="literal">true</span>/fasle);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">listener2</span>(<span class="params"></span>) </span>&#123;</div><div class="line">   <span class="built_in">console</span>.log(<span class="string">'test2'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>有一点要注意的是，当对某一个元素1既绑定了捕获事件，又绑定了冒泡事件时：<br>当这个元素1并不是触发事件的那个元素2时，则触发顺序会按照先 捕获 后 冒泡 的顺序触发；<br>当这个元素1就是最底层的触发事件的元素时，则这个元素没有捕获和冒泡的区别，谁先绑定就先触发谁。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div2 = <span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>);</div><div class="line"></div><div class="line">div2.addEventListener(<span class="string">"click"</span>, listener2, <span class="literal">true</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">listener2</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'test2'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">div2.addEventListener(<span class="string">"click"</span>, listener1, <span class="literal">false</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">listener1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'test1'</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 按绑定顺序执行，两个`addEventLister()`颠倒过来则执行顺序也变化</span></div><div class="line"><span class="comment">// 如果再对`div1`绑定一个捕获、一个冒泡，则会先触发捕获 再 触发冒泡，与绑定顺序无关</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>removeEventListener()</p>
-</blockquote>
-<p>与addEventListener()绑定事件对应的就是移除已绑定的事件。第三个参数的布尔值代表解绑的是捕获事件还是冒泡事件。两个事件互不相关。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div2 = <span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>);</div><div class="line">div2.addEventListener(<span class="string">"click"</span>, listener2, <span class="literal">true</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">listener2</span>(<span class="params"></span>) </span>&#123;</div><div class="line">   <span class="built_in">console</span>.log(<span class="string">'test2'</span>);</div><div class="line">&#125;</div><div class="line">div2.removeEventListener(<span class="string">"click"</span>, listener2, <span class="literal">true</span>);</div></pre></td></tr></table></figure>
-<p>注意：只能通过removeEventListener()解绑有名字的函数，对于绑定的匿名函数无法解除绑定。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">div2.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'test'</span>);</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">&#125;, <span class="literal">true</span>);</div><div class="line"></div><div class="line">div2.removeEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"test"</span>);</div><div class="line">&#125;, <span class="literal">true</span>);</div><div class="line">div2.onclick = <span class="literal">null</span>;</div><div class="line"><span class="comment">// 点击div2依然打印出test</span></div></pre></td></tr></table></figure>
-<p>注意：这里this指向触发事件的元素自身。</p>
-<blockquote>
-<p>attachEvent()、detachEvent()</p>
-</blockquote>
-<p>IE8及以下使用这两个方法绑定和解绑事件，当然，IE9+也支持这个事件。但这个方法绑定的事件默认为冒泡也只有冒泡。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 这里需要在事件前加 on</span></div><div class="line">div2.attachEvent(<span class="string">"onclick"</span>, listener1);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">listener1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'test'</span>);</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line">div2.detachEvent(<span class="string">"onclick"</span>, listener1);</div></pre></td></tr></table></figure></p>
-<p>和addEventListener()一样，也不能解绑匿名函数。<br>注意：这里this指向 window。</p>
-<blockquote>
-<p>阻止默认事件和冒泡</p>
-</blockquote>
-<p>标准事件和IE事件中的阻止默认事件和冒泡事件也有很大区别。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div2 = <span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>);</div><div class="line"><span class="keyword">if</span> (div2.addEventListener) &#123;</div><div class="line">    div2.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        e.preventDefault(); <span class="comment">// 阻止默认事件</span></div><div class="line">        e.stopPropagation(); <span class="comment">// 阻止冒泡</span></div><div class="line">        <span class="built_in">console</span>.log(e.target.innerHTML);</div><div class="line">    &#125;, <span class="literal">false</span>);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    div2.attachEvent(<span class="string">"onclick"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> e = <span class="built_in">window</span>.event;</div><div class="line">        e.returnValue = <span class="literal">false</span>; <span class="comment">// 阻止默认事件</span></div><div class="line">        e.cancelBubble = <span class="literal">true</span>; <span class="comment">// 阻止冒泡</span></div><div class="line">        <span class="built_in">console</span>.log(e.srcElement.innerHTML);</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>IE8及以下的event是绑定在window上的。（我的IE11里，仿真到IE7、IE8也可以取到标准事件里的 e 对象，估计是升级到IE11的原因）。</p>
-<blockquote>
-<p>自定义事件：createEvent()</p>
-</blockquote>
-<p>createEvent()用于创建一个新的 event ，而后这个 event 必须调用它的 init() 方法进行初始化。最后就可以在目标元素上使用dispatchEvent()调用新创建的event事件了。</p>
-<p>createEvent()的参数一般有：UIEvents、MouseEvents、MutationEvents、HTMLEvents、Event(s)等等，分别有对应的init()方法。HTMLEvents、Event(s)对应的都是initEvent()方法。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">initEvent(type, bubbles, cancelable)</div></pre></td></tr></table></figure>
-<p>type表示自定义的事件类型，bubbles表示是否冒泡，cancelable表示是否阻止默认事件。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">target.dispatchEvent(ev)</div></pre></td></tr></table></figure>
-<p>target就是要触发自定义事件的DOM元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var div1 = document.getElementById(&quot;div1&quot;);</div><div class="line">div1.addEventListener(&quot;message&quot;, function()&#123;</div><div class="line">  console.log(&apos;test&apos;);</div><div class="line">&#125;, false);</div><div class="line"></div><div class="line">var div2 = document.getElementById(&quot;div2&quot;);</div><div class="line">div2.addEventListener(&quot;message&quot;, function(e)&#123;</div><div class="line">  console.log(this);</div><div class="line">  console.log(e);</div><div class="line">&#125;, false);</div><div class="line">var ev = document.createEvent(&quot;Event&quot;);</div><div class="line">ev.initEvent(&quot;message&quot;, false, true); // 起泡参数变为true，div1的事件就会触发</div><div class="line">div2.dispatchEvent(ev);</div></pre></td></tr></table></figure></p>
-<h1 id="获取元素相关计算后的值"><a href="#获取元素相关计算后的值" class="headerlink" title="获取元素相关计算后的值"></a>获取元素相关计算后的值</h1><blockquote>
-<p>getComputedStyle()、currentStyle()</p>
-</blockquote>
-<p>当我们想获取元素计算后实际呈现在页面上的各个值，就用这两个方法。IE8及以下用currentStyle(),IE9+及其他标准浏览器用getComputedStyle()。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div2 = <span class="built_in">document</span>.getElementById(<span class="string">"div2"</span>);</div><div class="line"><span class="keyword">var</span> result = <span class="string">""</span>;</div><div class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.getComputedStyle) &#123;</div><div class="line">    result = (<span class="built_in">window</span> || <span class="built_in">document</span>.defaultView).getComputedStyle(div2, <span class="literal">null</span>)[<span class="string">'cssFloat'</span>];</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    result = div2.currentStyle[<span class="string">"styleFloat"</span>];</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(result);</div><div class="line"><span class="comment">// document.defaultView返回document对象所关联的window</span></div></pre></td></tr></table></figure></p>
-<p>这两个方法在不同的浏览器里差距也很大。<br>比如float属性：<br>getComputedStyle： IE9以上需要用cssFloat，其他标准的用float<br>currentStyle： IE8及以下可用styleFloat或者float。</p>
-<p>比如height属性：<br>假如未设置height值，标准浏览器里能计算出高度值，而currentStyle计算出来是auto。</p>
-<p>上面的例子getComputedStyle是用键值去访问的，也可用getPropertyValue()去访问。（IE8、IE7不支持）</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">result = (<span class="built_in">window</span> || <span class="built_in">document</span>.defaultView).getComputedStyle(div2, <span class="literal">null</span>).getPropertyValue(<span class="string">"float"</span>);</div></pre></td></tr></table></figure>
-<blockquote>
-<p>getBoundingClientRect()、getClientRects()</p>
-</blockquote>
-<p>getBoundingClientRect()该方法获得页面中某个元素的上、右、下、左分别相对浏览器视窗的位置。getBoundingClientRect是DOM元素到浏览器可视范围的距离（到浏览器顶部而不是文档顶部）。该函数返回一个Object对象，该对象有6个属性：top,lef,right,bottom,width,height；这里的top、left和css中的理解很相似，width、height是元素自身的宽高，但是right，bottom和css中的理解有点不一样。right是指元素右边界距窗口最左边的距离，bottom是指元素下边界距窗口最上面的距离。</p>
-<p>getClientRects()是返回一个ClientRectList集合。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> div1 = <span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>);</div><div class="line"><span class="keyword">var</span> rects1 = div1.getClientRects();</div><div class="line"><span class="keyword">var</span> rects2 = div1.getBoundingClientRect();</div><div class="line"><span class="built_in">console</span>.log(rects1[<span class="number">0</span>].top);</div><div class="line"><span class="built_in">console</span>.log(rects2.top);</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1827,7 +1629,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1840,7 +1642,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
